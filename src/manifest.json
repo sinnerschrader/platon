@@ -3,9 +3,9 @@
 	"bundleVersion": 1,
 	"commands": [
 		{
-			"name": "react-sketchapp: Basic Setup",
+			"name": "platon",
 			"identifier": "main",
-			"script": "./my-command.js"
+			"script": "./index.js"
 		}
 	],
 	"menu": {
