@@ -5,7 +5,7 @@
 		{
 			"name": "Render Platon",
 			"identifier": "render-platon",
-			"script": "index.js"
+			"script": "index.sketch.js"
 		},
 		{
 			"name": "Set Color Palette",

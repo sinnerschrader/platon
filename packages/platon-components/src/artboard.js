@@ -15,7 +15,7 @@ export const Artboard = global.document
         props.name &&
           <Text style={labelStyle}>{props.name}</Text>
       }
-      <View style={[{background: '#fff'}, props.style]}>
+      <View style={[{backgroundColor: '#fff'}, props.style]}>
         {props.children}
       </View>
     </View>

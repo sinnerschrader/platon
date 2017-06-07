@@ -1,10 +1,10 @@
-import colors from '../colors';
+import config from '../../config';
 
 export default function(context) {
-  const data = {
+  /* const data = {
     "compatibleVersion": "2.0",
     "pluginVersion": "2.10",
-    "colors": colors.map(color => {
+    "colors": config.colorTiles.colors.map(color => {
       const c = MSImmutableColor.colorWithSVGString(color.hex);
       return {
         red: c.red(),
@@ -27,5 +27,5 @@ export default function(context) {
     const path = save.URL().path();
     const file = NSString.stringWithString(JSON.stringify(data));
     file.writeToFile_atomically_encoding_error(path, true, NSUTF8StringEncoding, null);
-  }
+  } */
 }
