@@ -7,8 +7,10 @@ const colorTileStyle = {
   flexWrap: 'wrap'
 };
 
-export const ColorTiles = (props) => (
-  <View style={colorTileStyle}>
-    {props.colors.map(c => <ColorTile name={c.name} hex={c.hex} key={c.name} />)}
-  </View>
-);
+export const ColorTiles = (props) => {
+  return (
+    <View style={colorTileStyle}>
+      {props.colors.map(c => <ColorTile name={c.name} hex={c.hex} key={c.name} />)}
+    </View>
+  );
+};

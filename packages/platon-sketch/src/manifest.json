@@ -3,15 +3,27 @@
 	"bundleVersion": 1,
 	"commands": [
 		{
-			"name": "platon",
-			"identifier": "main",
-			"script": "./index.js"
+			"name": "Render Platon",
+			"identifier": "render-platon",
+			"script": "index.js"
+		},
+		{
+			"name": "Set Color Palette",
+			"identifier": "set-palette-platon",
+			"script": "./cmd/set-palette.js"
+		},
+		{
+			"name": "Export Color Palette",
+			"identifier": "export-palette-platon",
+			"script": "./cmd/export-palette.js"
 		}
 	],
 	"menu": {
-		"isRoot": true,
+		"isRoot": false,
 		"items": [
-			"main"
+			"render-platon",
+			"set-palette-platon",
+			"export-palette-platon"
 		]
 	}
 }
