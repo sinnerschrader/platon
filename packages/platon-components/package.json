@@ -9,7 +9,14 @@
   },
   "dependencies": {
     "react": "^15.5.4",
-    "react-primitives": "^0.4.2"
+    "react-dom": "^15.5.4",
+    "react-primitives": "^0.4.2",
+    "react-sketchapp": "^0.10.3",
+    "react-test-renderer": "^15.5.4",
+    "sketch-module-console-polyfill": "^0.1.0",
+    "sketch-module-fetch-polyfill": "^0.1.4",
+    "sketch-module-setinterval-polyfill": "^0.1.0",
+    "sketch-module-settimeout-polyfill": "^0.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

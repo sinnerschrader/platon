@@ -4,7 +4,7 @@
   "main": "lib/",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --open",
     "prepublish": "webpack"
   },
   "devDependencies": {
