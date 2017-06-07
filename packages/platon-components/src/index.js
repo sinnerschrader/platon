@@ -1,2 +1,2 @@
 export {Artboard} from './artboard';
-export {ColorTile} from './color-tile';
+export {ColorTile, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from './color-tile';

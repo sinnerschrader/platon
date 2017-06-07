@@ -4,10 +4,11 @@
   "description": "Create universals design systems from archetypes",
   "private": true,
   "scripts": {
-    "postinstall": "npm run lerna bootstrap",
+    "start": "lerna run --stream --no-sort start",
     "lerna": "lerna",
     "start:sketch": "lerna run --stream --no-sort start --scope=platon-sketch",
-    "start:browser": "lerna run --stream --no-sort start --scope=platon-browser"
+    "start:browser": "lerna run --stream --no-sort start --scope=platon-browser",
+    "postinstall": "npm run lerna bootstrap"
   },
   "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
   "license": "MIT",

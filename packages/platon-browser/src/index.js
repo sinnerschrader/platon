@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {View, Text} from 'react-primitives';
-import {Artboard, ColorTile} from 'platon-components';
+import {Artboard, ColorTile, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from 'platon-components';
+
+const COLOR_TILES_IN_ROW = 3;
+const ARTBOARD_PADDING = 20;
 
 const colors = [
   {
@@ -33,7 +36,15 @@ const colors = [
 function Application() {
   return (
     <View>
-      <Artboard name="Colors">
+      <Artboard
+        name="S2 ColorTile"
+        style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          width: (COLOR_TILE_SIZE + COLOR_TILE_MARGIN * 2) * COLOR_TILES_IN_ROW + (ARTBOARD_PADDING * 2) ,
+          padding: ARTBOARD_PADDING,
+        }}
+      >
         {colors.map(c => <ColorTile name={c.name} hex={c.hex} key={c.name} />)}
       </Artboard>
     </View>

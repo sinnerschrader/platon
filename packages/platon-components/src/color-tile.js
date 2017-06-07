@@ -46,3 +46,5 @@ export const ColorTile = ({ name, hex }) => (
    </View>
   </View>
 );
+
+ColorTile.displayName = 'ColorTile';
