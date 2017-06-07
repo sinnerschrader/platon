@@ -9,4 +9,5 @@
 git clone https://github.com/sinnerschrader/platon.git
 cd platon
 npm install
+npm start # watches sources, opens browser, renders to sketch
 ```
