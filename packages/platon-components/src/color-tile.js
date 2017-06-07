@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-sketchapp';
+import { Text, View } from 'react-primitives';
 
 export const COLOR_TILE_SIZE = 300;
 export const COLOR_TILE_MARGIN = 10;

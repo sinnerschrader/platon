@@ -2,26 +2,17 @@
   "name": "platon",
   "version": "1.0.0",
   "description": "Create universals design systems from archetypes",
-  "main": "platon.sketchplugin",
-  "private": "true",
-  "manifest": "src/manifest.json",
+  "private": true,
   "scripts": {
-    "build": "skpm build",
-    "watch": "skpm build --watch",
-    "render": "skpm build --watch --run",
-    "render:once": "skpm build --run",
-    "link-plugin": "skpm link"
+    "postinstall": "npm run lerna bootstrap",
+    "lerna": "lerna",
+    "start:sketch": "lerna run --stream --no-sort start --scope=platon-sketch",
+    "start:browser": "lerna run --stream --no-sort start --scope=platon-browser",
+    "clean": "git clean"
   },
   "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
   "license": "MIT",
   "devDependencies": {
-    "skpm": "^0.9.0"
-  },
-  "dependencies": {
-    "chroma-js": "^1.2.2",
-    "prop-types": "^15.5.8",
-    "react": "^15.4.2",
-    "react-sketchapp": "^0.10.0",
-    "react-test-renderer": "^15.4.2"
+    "lerna": "^2.0.0-rc.5"
   }
 }

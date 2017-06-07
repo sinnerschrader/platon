@@ -9,5 +9,4 @@
 git clone https://github.com/sinnerschrader/platon.git
 cd platon
 npm install
-npm run render
 ```

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { render, Artboard, Text, View } from 'react-sketchapp';
 
-import {ColorTile, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from './color-tile';
+import {ColorTile, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from 'platon-components';
 
 const COLOR_TILES_IN_ROW = 3;
 const ARTBOARD_PADDING = 20;
@@ -47,8 +47,7 @@ export default (context) => {
       name: 'S2 WHITE',
       hex: '#FFFFFF'
     },
-    
-  ]
+  ];
 
   render(<Document colors={colorList} />, context.document.currentPage());
 }
