@@ -7,8 +7,7 @@
     "postinstall": "npm run lerna bootstrap",
     "lerna": "lerna",
     "start:sketch": "lerna run --stream --no-sort start --scope=platon-sketch",
-    "start:browser": "lerna run --stream --no-sort start --scope=platon-browser",
-    "clean": "git clean"
+    "start:browser": "lerna run --stream --no-sort start --scope=platon-browser"
   },
   "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
   "license": "MIT",
