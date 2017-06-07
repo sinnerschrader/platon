@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { render, Artboard, Text, View } from 'react-sketchapp';
+import { render, Text, View } from 'react-sketchapp';
 
-import {ColorTile, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from 'platon-components';
+import {Artboard, ColorTiles, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from 'platon-components';
 
 const COLOR_TILES_IN_ROW = 3;
 const ARTBOARD_PADDING = 20;
@@ -11,13 +11,11 @@ const Document = ({ colors }) => (
   <Artboard
     name="S2 ColorTile"
     style={{
-      flexDirection: 'row',
-      flexWrap: 'wrap',
       width: (COLOR_TILE_SIZE + COLOR_TILE_MARGIN * 2) * COLOR_TILES_IN_ROW + (ARTBOARD_PADDING * 2) ,
       padding: ARTBOARD_PADDING,
     }}
   >
-    {colors.map(c => <ColorTile name={c.name} hex={c.hex} key={c.name} />)}
+    <ColorTiles colors={colors}/>
   </Artboard>
 );
 
