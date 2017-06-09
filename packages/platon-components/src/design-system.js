@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-primitives';
-import {Artboard, ColorTiles, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from '.';
-import {descriptionStyles, headlineStyles, sublineStyles} from './color-tile';
+import {Artboard, FontTiles, ColorTiles, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from '.';
 
 const COLOR_TILES_IN_ROW = 3;
 const ARTBOARD_PADDING = 20;
@@ -23,34 +22,10 @@ export const DesignSystem = (props) => (
       </Artboard>
     }
       <Artboard
-        name={"Fontfamily"}
+        name={props.fontTiles.name}
         style={colorTilsArtboardStyle}
         >
-        <View style={[{
-          height: COLOR_TILE_SIZE,
-          width: COLOR_TILE_SIZE,
-          margin: COLOR_TILE_MARGIN,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between'
-        }, {backgroundColor: '#f2f2f2'}]}>
-          <View style={[
-            descriptionStyles,
-            {backgroundColor: '#f2f2f2'}
-          ]}>
-            <Text style={{fontSize:30, lineHeight:40}}>
-              "Schönheit bietet eine natürliche Überlegenheit."
-            </Text>
-          </View>
-          <View style={[descriptionStyles, {}]}>
-            <Text style={headlineStyles}>
-              Helvetica Neue
-            </Text>
-            <Text style={sublineStyles}>
-              Regular
-            </Text>
-          </View>
-        </View>
+        <FontTiles fonts={props.fontTiles.fonts}/>
       </Artboard>
   </View>
 );
