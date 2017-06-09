@@ -1,0 +1,9 @@
+{
+  "extends": ["xo-space", "xo-react"],
+  "rules": {
+    "react/prop-types": "off",
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "react/forbid-component-props": "off"
+  }
+}

@@ -1,17 +1,16 @@
 import React from 'react';
-import {Text, View} from 'react-primitives';
+import {View} from 'react-primitives';
 import {Artboard, FontTiles, ColorTiles, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from '.';
 
 const COLOR_TILES_IN_ROW = 3;
 const ARTBOARD_PADDING = 20;
 
-
 const colorTilsArtboardStyle = {
-  width: (COLOR_TILE_SIZE + COLOR_TILE_MARGIN * 2) * COLOR_TILES_IN_ROW + (ARTBOARD_PADDING * 2) ,
-  padding: ARTBOARD_PADDING,
+  width: ((COLOR_TILE_SIZE + (COLOR_TILE_MARGIN * 2)) * COLOR_TILES_IN_ROW) + (ARTBOARD_PADDING * 2),
+  padding: ARTBOARD_PADDING
 };
 
-export const DesignSystem = (props) => (
+export const DesignSystem = props => (
   <View>
     {props.colorTiles &&
       <Artboard
@@ -21,11 +20,13 @@ export const DesignSystem = (props) => (
         <ColorTiles colors={props.colorTiles.colors}/>
       </Artboard>
     }
+    {props.fontTiles &&
       <Artboard
         name={props.fontTiles.name}
         style={colorTilsArtboardStyle}
         >
         <FontTiles fonts={props.fontTiles.fonts}/>
       </Artboard>
+    }
   </View>
 );
