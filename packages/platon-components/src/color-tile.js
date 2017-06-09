@@ -12,7 +12,7 @@ const containerStyles = {
   margin: COLOR_TILE_MARGIN,
 };
 
-const descriptionStyles = {
+export const descriptionStyles = {
   paddingTop: 10,
   paddingRight: 20,
   paddingBottom: 10,
@@ -20,13 +20,13 @@ const descriptionStyles = {
   backgroundColor: '#fff'
 };
 
-const headlineStyles = {
+export const headlineStyles = {
   fontWeight: 'bold',
   fontSize: 20,
   lineHeight: 30,
 };
 
-const sublineStyles = {
+export const sublineStyles = {
   fontSize: 14,
   lineHeight: 20,
 };
