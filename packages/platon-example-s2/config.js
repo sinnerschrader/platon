@@ -25,57 +25,61 @@ export default {
       {
         name: 'S2 WHITE',
         hex: '#ffffff'
-      },
+      }
     ]
   },
   fontTiles: {
-    name: 'fontFamily',
+    name: 'S2 Fonts',
     fonts: [
       {
         name: 'Maison',
         weight: 'Regular',
-        family: 'Maison-Regular',
+        family: 'Maison-Regular'
       },
       {
         name: 'Maison',
         weight: 'Bold',
-        family: 'Maison-Bold',
+        family: 'Maison-Bold'
       },
       {
         name: 'Maison',
         weight: 'Light',
-        family: 'Maison-Light',
+        family: 'Maison-Light'
       },
       {
         name: 'Maison',
         weight: 'Italic',
-        family: 'Maison-Italic',
+        family: 'Maison-Italic'
       },
       {
         name: 'Maison Mono',
         weight: 'Regular',
         family: 'MaisonMono-Regular',
+        fontSize: 25
       },
       {
         name: 'Maison Mono',
         weight: 'Bold',
         family: 'MaisonMono-Bold',
+        fontSize: 25
       },
       {
         name: 'Maison Mono',
         weight: 'Light',
         family: 'MaisonMono-Light',
+        fontSize: 25
       },
       {
         name: 'Maison Mono',
         weight: 'Italic',
         family: 'MaisonMono-Italic',
+        fontSize: 25
       },
       {
-        name: 'Noa',
+        name: 'Noe',
         weight: 'Regular',
-        family: 'NoeText-Regular',
-      },
+        family: 'NoeText-Regular'
+      }
     ]
   }
 };
