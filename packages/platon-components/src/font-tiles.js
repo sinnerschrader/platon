@@ -7,15 +7,17 @@ const FontTileStyle = {
   flexWrap: 'wrap'
 };
 
-export const FontTiles = (props) => {
+export const FontTiles = props => {
   return (
     <View style={FontTileStyle}>
       {props.fonts.map(font => (
         <FontTile
-          name={font.name}
-          weight={font.weight}
-          family={font.family}
           key={font.family}
+          family={font.family}
+          name={font.name}
+          fontSize={font.fontSize}
+          lineHeight={font.lineHeight}
+          weight={font.weight}
           />
         )
       )}

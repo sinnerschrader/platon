@@ -5,7 +5,7 @@ import {Artboard, FontTiles, ColorTiles, COLOR_TILE_SIZE, COLOR_TILE_MARGIN} fro
 const COLOR_TILES_IN_ROW = 3;
 const ARTBOARD_PADDING = 20;
 
-const colorTilsArtboardStyle = {
+const artboardStyle = {
   width: ((COLOR_TILE_SIZE + (COLOR_TILE_MARGIN * 2)) * COLOR_TILES_IN_ROW) + (ARTBOARD_PADDING * 2),
   padding: ARTBOARD_PADDING
 };
@@ -15,7 +15,7 @@ export const DesignSystem = props => (
     {props.colorTiles &&
       <Artboard
         name={props.colorTiles.name}
-        style={colorTilsArtboardStyle}
+        style={artboardStyle}
         >
         <ColorTiles colors={props.colorTiles.colors}/>
       </Artboard>
@@ -23,7 +23,7 @@ export const DesignSystem = props => (
     {props.fontTiles &&
       <Artboard
         name={props.fontTiles.name}
-        style={colorTilsArtboardStyle}
+        style={artboardStyle}
         >
         <FontTiles fonts={props.fontTiles.fonts}/>
       </Artboard>
