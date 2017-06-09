@@ -8,18 +8,17 @@ const labelStyle = {
   padding: 3
 };
 
-export const Artboard = global.document
-  ? props => (
-    <View>
-      {
-        props.name &&
-          <Text style={labelStyle}>{props.name}</Text>
-      }
-      <View style={[{backgroundColor: '#fff'}, props.style]}>
-        {props.children}
-      </View>
+export const Artboard = global.document ? props => (
+  <View>
+    {
+      props.name &&
+        <Text style={labelStyle}>{props.name}</Text>
+    }
+    <View style={[{backgroundColor: '#fff'}, props.style]}>
+      {props.children}
     </View>
-  )
-  : require('react-sketchapp').Artboard;
+  </View>
+  ) :
+  require('react-sketchapp').Artboard;
 
 Artboard.displayName = 'Artboard';
