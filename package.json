@@ -4,12 +4,13 @@
   "description": "Create universals design systems from archetypes",
   "private": true,
   "scripts": {
-    "start": "lerna run --stream --no-sort start",
+    "start": "stmux -- [ [ \"npm run start:components\" .. \"npm run start:s2:web\" .. \"npm run start:s2:sketch\" ] : -s 1/3 -f bash ]",
+    "start:components": "lerna run --stream --scope=platon-components start",
+    "start:s2:web": "lerna run --stream --scope=platon-example-s2 start:web",
+    "start:s2:sketch": "lerna run --stream --scope=platon-example-s2 start:sketch",
     "lerna": "lerna",
-    "start:sketch": "lerna run --stream --no-sort start --scope=platon-sketch",
-    "start:browser": "lerna run --stream --no-sort start --scope=platon-browser",
     "postinstall": "npm run lerna bootstrap",
-    "reinstall": "npm run lerna clean && npm install"
+    "reinstall": "git clean -xdf && npm install"
   },
   "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "eslint-config-xo-space": "^0.16.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "lerna": "^2.0.0-rc.5"
+    "lerna": "^2.0.0-rc.5",
+    "stmux": "^1.4.11"
   }
 }

@@ -7,7 +7,7 @@ export default {
         hex: '#4502DA'
       },
       {
-        name: 'S2 RED',
+        name: 'S2 REDER',
         hex: '#FF0354'
       },
       {
