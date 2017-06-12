@@ -4,6 +4,18 @@
     "react/prop-types": "off",
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
-    "react/forbid-component-props": "off"
+    "react/forbid-component-props": "off",
+    "react/forbid-elements": ["error", {
+      "forbid": [
+        {
+          "element": "view",
+          "message": "Unknow element \"view\". Use \"<View>\""
+        },
+        {
+          "element": "text",
+          "message": "Unknow element \"text\". Use \"<Text>\""
+        }
+      ]
+    }]
   }
 }
