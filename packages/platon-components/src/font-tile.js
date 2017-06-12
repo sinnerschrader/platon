@@ -6,6 +6,7 @@ import {descriptionStyles, headlineStyles, sublineStyles} from './color-tile';
 export const FontTile = props => {
   return (
     <View
+      name={`${FontTile.displayName} "${props.name}"`}
       style={{
         backgroundColor: '#f2f2f2',
         display: 'flex',
@@ -32,14 +33,16 @@ export const FontTile = props => {
           „Sch&ouml;nheit bietet eine natürliche Überlegenheit.”
         </Text>
       </View>
-      <View style={descriptionStyles}>
-        <Text style={headlineStyles}>
+      <View name="Font description" style={descriptionStyles}>
+        <Text name="Font name" style={headlineStyles}>
           {props.name}
         </Text>
-        <Text style={sublineStyles}>
+        <Text name="Font weight" style={sublineStyles}>
           {props.weight}
         </Text>
       </View>
     </View>
   );
 };
+
+FontTile.displayName = 'Font Tile';

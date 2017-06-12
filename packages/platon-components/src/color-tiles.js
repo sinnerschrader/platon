@@ -9,7 +9,7 @@ const colorTileStyle = {
 
 export const ColorTiles = props => {
   return (
-    <View style={colorTileStyle}>
+    <View name={ColorTiles.displayName} style={colorTileStyle}>
       {props.colors.map(c => (
         <ColorTile
           key={c.name}
@@ -21,3 +21,5 @@ export const ColorTiles = props => {
     </View>
   );
 };
+
+ColorTiles.displayName = 'Color Tiles';

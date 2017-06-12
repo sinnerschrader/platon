@@ -9,7 +9,7 @@ const FontTileStyle = {
 
 export const FontTiles = props => {
   return (
-    <View style={FontTileStyle}>
+    <View name={FontTiles.displayName} style={FontTileStyle}>
       {props.fonts.map(font => (
         <FontTile
           key={font.family}
@@ -24,3 +24,5 @@ export const FontTiles = props => {
     </View>
   );
 };
+
+FontTiles.displayName = 'Font Tiles';

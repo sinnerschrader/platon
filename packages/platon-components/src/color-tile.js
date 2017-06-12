@@ -36,7 +36,7 @@ export const ColorTile = ({name, hex}) => (
     name={`Color Tile "${name}"`}
     style={[containerStyles, {backgroundColor: hex}]}
     >
-    <View style={descriptionStyles}>
+    <View name="Color Description" style={descriptionStyles}>
       <Text name="Color Name" style={headlineStyles}>
         {name}
       </Text>
