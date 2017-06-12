@@ -34,7 +34,11 @@ function moveArtboardsTop(page) {
   // Remove everything from root that is not an artboard
   arrayify(page.layers())
     .filter(l => !(l instanceof MSArtboardGroup))
-    .forEach(layer => layer.removeFromParent());
+    .forEach(l => {
+      if (String(l.name()) !== 'RedBox') {
+        l.removeFromParent()
+      }
+    });
 }
 
 function arrayify(list) {
