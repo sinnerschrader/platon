@@ -20,7 +20,7 @@ export default {
       },
       {
         name: 'S2 GREY',
-        hex: '#F4F7FA'
+        hex: '#E8ECEF'
       },
       {
         name: 'S2 WHITE',
