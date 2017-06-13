@@ -34,7 +34,7 @@ export const sublineStyles = {
 export const ColorTile = ({name, hex}) => (
   <View
     name={`Color Tile "${name}"`}
-    style={[containerStyles, {backgroundColor: hex}]}
+    style={[containerStyles, {backgroundColor: hex, position: 'relative'}]}
     >
     <View name="Color Description" style={descriptionStyles}>
       <Text name="Color Name" style={headlineStyles}>
