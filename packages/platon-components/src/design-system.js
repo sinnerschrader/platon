@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-primitives';
+import {View, Text} from 'react-primitives';
 import {Artboard} from './artboard';
 import {ColorTiles} from './color-tiles';
 import {DistanceTiles} from './distance-tiles';
@@ -73,6 +73,66 @@ export const DesignSystem = props => (
           gutter={TILE_MARGIN}
           step={TILE_SIZE + TILE_MARGIN}
           />
+      </Artboard>
+    }
+    {
+      <Artboard
+        name="Text Styles"
+        style={[artboardStyle, tiledArtboardStyle]}
+        >
+        <View
+          name="Tile"
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            width: 960
+          }}
+          >
+          <View
+            name="Description Container"
+            style={{
+              width: 200,
+              padding: 20
+            }}
+            >
+            <Text>
+              Name
+            </Text>
+            <View
+              name="key value 1"
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                width: 200
+              }}
+              >
+              <Text
+                style={{
+                  paddingRight: 20
+                }}
+                >
+                key
+              </Text>
+              <Text>
+                value value value value
+              </Text>
+            </View>
+          </View>
+          <View
+            name="Stage Container"
+            style={{
+              backgroundColor: '#f2f2f2',
+              padding: 20
+            }}
+            >
+            <Text
+              style={{
+              }}
+              >
+              Die Philosophie bietet mir einen Hafen, während ich andere mit den Stürmen kämpfen sehe.
+            </Text>
+          </View>
+        </View>
       </Artboard>
     }
   </View>
