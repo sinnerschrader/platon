@@ -221,5 +221,16 @@ export default {
         family: 'NoeText-Regular'
       }
     ]
+  },
+  vectorTiles: {
+    name: 'S2 Vectors',
+    vectors: [
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Outside bottom M',
+        vectorValue: 'Outside bottom M'
+      }
+    ]
   }
 };
