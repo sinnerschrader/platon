@@ -4,6 +4,7 @@ import {Artboard} from './artboard';
 import {ColorTiles} from './color-tiles';
 import {Distances} from './distances';
 import {FontTiles} from './font-tiles';
+import {VectorTiles} from './vector-tiles';
 
 const TILE_SIZE = 300;
 const TILE_MARGIN = 10;
@@ -55,5 +56,19 @@ export const DesignSystem = props => (
             />
         </Artboard>
     }
+    {props.vectorTiles &&
+      <Artboard
+        name={props.vectorTiles.name}
+        style={artboardStyle}
+        >
+        <VectorTiles
+          vectors={props.vectorTiles.vectors}
+          size={TILE_SIZE}
+          gutter={TILE_MARGIN}
+          />
+      </Artboard>
+    }
   </View>
 );
+
+DesignSystem.displayName = 'DesignSystem';

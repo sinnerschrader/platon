@@ -20,7 +20,7 @@ export default {
       },
       {
         name: 'S2 GREY',
-        hex: '#F4F7FA'
+        hex: '#E8ECEF'
       },
       {
         name: 'S2 WHITE',
@@ -219,6 +219,23 @@ export default {
         name: 'Noe',
         weight: 'Regular',
         family: 'NoeText-Regular'
+      }
+    ]
+  },
+  vectorTiles: {
+    name: 'S2 Vectors',
+    vectors: [
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Outside bottom M',
+        vectorValue: 'Outside bottom M'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 200,
+        vectorName: 'Outside bottom L',
+        vectorValue: 'Outside bottom L'
       }
     ]
   }
