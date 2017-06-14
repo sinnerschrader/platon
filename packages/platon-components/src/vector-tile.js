@@ -2,6 +2,8 @@ import React from 'react';
 import {Text, View} from 'react-primitives';
 import {descriptionStyles, headlineStyles, sublineStyles} from './color-tile';
 
+const TILE_STAGE_PADDING = 20;
+
 export const VectorTile = props => {
   return (
     <View
@@ -10,7 +12,7 @@ export const VectorTile = props => {
         backgroundColor: '#f2f2f2',
         display: 'flex',
         flexDirection: 'column',
-        height: props.size,
+        minHeight: props.size,
         justifyContent: 'space-between',
         margin: props.margin,
         width: props.size
@@ -20,11 +22,12 @@ export const VectorTile = props => {
         name={'Tile Stage'}
         style={{
           display: 'flex',
-          height: 230, // WIP calculate height
+          minHeight: 230,
+          height: props.distanceValue + (TILE_STAGE_PADDING * 2) + 74,
           alignItems: 'center',
           justifyContent: 'center',
-          paddingTop: 20,
-          paddingBottom: 20
+          paddingTop: TILE_STAGE_PADDING,
+          paddingBottom: TILE_STAGE_PADDING
         }}
         >
         <View
@@ -51,7 +54,7 @@ export const VectorTile = props => {
               style={{
                 backgroundColor: '#999',
                 width: 150,
-                height: props.distanceValue, // Insert value of distance
+                height: props.distanceValue,
                 borderWidth: 0,
                 borderBottomWidth: 1,
                 borderBottomColor: '#000',

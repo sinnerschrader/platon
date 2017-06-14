@@ -230,6 +230,12 @@ export default {
         distanceValue: 50,
         vectorName: 'Outside bottom M',
         vectorValue: 'Outside bottom M'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 200,
+        vectorName: 'Outside bottom L',
+        vectorValue: 'Outside bottom L'
       }
     ]
   }
