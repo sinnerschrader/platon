@@ -9,7 +9,7 @@ export function BarGraph(props) {
   const max = values.sort((a, b) => b - a)[0];
 
   return (
-    <View>
+    <View name={BarGraph.displayName}>
       <View
         name="bargraph-canvas"
         style={{
@@ -73,3 +73,5 @@ export function BarGraph(props) {
     </View>
   );
 }
+
+BarGraph.displayName = 'BarGraph';

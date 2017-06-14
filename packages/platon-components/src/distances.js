@@ -4,7 +4,7 @@ import {BarGraph} from './bar-graph';
 
 export function Distances(props) {
   return (
-    <View>
+    <View name={Distances.displayName}>
       {
         props.distances.map(d => {
           return (
@@ -55,3 +55,5 @@ export function Distances(props) {
     </View>
   );
 }
+
+Distances.displayName = 'Distances';

@@ -106,3 +106,5 @@ export function Bar(props) {
 Bar.defaultProps = {
   width: 50
 };
+
+Bar.displayName = 'Bar';
