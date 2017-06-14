@@ -1,6 +1,5 @@
 import React from 'react';
 import {Text, View} from 'react-primitives';
-import {COLOR_TILE_SIZE, COLOR_TILE_MARGIN} from '.';
 import {descriptionStyles, headlineStyles, sublineStyles} from './color-tile';
 
 export const FontTile = props => {
@@ -11,10 +10,10 @@ export const FontTile = props => {
         backgroundColor: '#f2f2f2',
         display: 'flex',
         flexDirection: 'column',
-        height: COLOR_TILE_SIZE,
+        height: props.size,
         justifyContent: 'space-between',
-        margin: COLOR_TILE_MARGIN,
-        width: COLOR_TILE_SIZE
+        margin: props.margin,
+        width: props.size
       }}
       >
       <View

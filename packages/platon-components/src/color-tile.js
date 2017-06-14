@@ -1,15 +1,9 @@
 import React from 'react';
 import {Text, View} from 'react-primitives';
 
-export const COLOR_TILE_SIZE = 300;
-export const COLOR_TILE_MARGIN = 10;
-
 const containerStyles = {
   flexDirection: 'column',
-  justifyContent: 'flex-end',
-  height: COLOR_TILE_SIZE,
-  width: COLOR_TILE_SIZE,
-  margin: COLOR_TILE_MARGIN
+  justifyContent: 'flex-end'
 };
 
 export const descriptionStyles = {
@@ -31,17 +25,26 @@ export const sublineStyles = {
   lineHeight: 20
 };
 
-export const ColorTile = ({name, hex}) => (
+export const ColorTile = props => (
   <View
-    name={`Color Tile "${name}"`}
-    style={[containerStyles, {backgroundColor: hex}]}
+    name={`Color Tile "${props.name}"`}
+    style={[
+      containerStyles,
+      {
+        backgroundColor: props.hex,
+        position: 'relative',
+        height: props.size,
+        width: props.size,
+        margin: props.margin
+      }
+    ]}
     >
     <View name="Color Description" style={descriptionStyles}>
       <Text name="Color Name" style={headlineStyles}>
-        {name}
+        {props.name}
       </Text>
       <Text name="Color Hex" style={sublineStyles}>
-        {hex}
+        {props.hex}
       </Text>
     </View>
   </View>
