@@ -15,6 +15,8 @@ export const ColorTiles = props => {
           key={c.name}
           name={c.name}
           hex={c.hex}
+          size={props.size}
+          margin={props.gutter}
           />
         )
       )}

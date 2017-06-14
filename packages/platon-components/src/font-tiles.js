@@ -15,6 +15,8 @@ export const FontTiles = props => {
           key={font.family}
           family={font.family}
           name={font.name}
+          size={props.size}
+          margin={props.gutter}
           fontSize={font.fontSize}
           lineHeight={font.lineHeight}
           weight={font.weight}
