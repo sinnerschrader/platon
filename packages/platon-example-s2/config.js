@@ -28,140 +28,79 @@ export default {
       }
     ]
   },
-  distances: {
+  distanceTiles: {
     name: 'S2 Distances',
     distances: [
       {
-        variable: 'XXS',
-        value: [
+        name: '320',
+        values: [
           {
-            background: '#4502DA',
+            name: 'XXS',
             value: 3
-          }
-        ]
-      },
-      {
-        variable: 'XS',
-        value: [
+          },
           {
-            background: '#4502DA',
+            name: 'XS',
             value: 6
-          }
-        ]
-      },
-      {
-        variable: 'S',
-        value: [
+          },
           {
-            background: '#FF0354',
+            name: 'S',
             value: 12
-          }
-        ]
-      },
-      {
-        variable: 'M',
-        value: [
+          },
           {
-            background: '#4502DA',
+            name: 'M',
             value: 18
-          }
-        ]
-      },
-      {
-        variable: 'L',
-        value: [
+          },
           {
-            background: '#4502DA',
+            name: 'L',
             value: 24
-          }
-        ]
-      },
-      {
-        variable: 'XL',
-        value: [
+          },
           {
-            background: '#4502DA',
-            condition: '320',
+            name: 'XL',
             value: 30
           },
           {
-            background: '#FF0354',
-            condition: '768',
-            value: 30
-          },
-          {
-            background: '#03FFB7',
-            condition: '1024',
-            value: 30
-          },
-          {
-            background: '#F4F7FA',
-            condition: '1440',
+            name: 'XXL',
             value: 36
           },
           {
-            background: '#000',
-            condition: '1920',
+            name: '3XL',
             value: 42
           }
         ]
       },
       {
-        variable: 'XXL',
-        value: [
+        name: '1920',
+        values: [
           {
-            background: '#4502DA',
-            condition: '320',
-            value: 36
+            name: 'XXS',
+            value: 3
           },
           {
-            background: '#FF0354',
-            condition: '768',
-            value: 36
+            name: 'XS',
+            value: 6
           },
           {
-            background: '#03FFB7',
-            condition: '1024',
+            name: 'S',
+            value: 12
+          },
+          {
+            name: 'M',
+            value: 18
+          },
+          {
+            name: 'L',
+            value: 24
+          },
+          {
+            name: 'XL',
             value: 42
           },
           {
-            background: '#F4F7FA',
-            condition: '1440',
-            value: 54
-          },
-          {
-            background: '#000',
-            condition: '1920',
+            name: 'XXL',
             value: 66
-          }
-        ]
-      },
-      {
-        variable: '3XL',
-        value: [
-          {
-            background: '#4502DA',
-            condition: '320',
-            value: 42
           },
           {
-            background: '#FF0354',
-            condition: '768',
-            value: 48
-          },
-          {
-            background: '#03FFB7',
-            condition: '1024',
-            value: 60
-          },
-          {
-            background: '#F4F7FA',
-            condition: '1440',
-            value: 78
-          },
-          {
-            background: '#000',
-            condition: '1920',
+            name: '3XL',
             value: 96
           }
         ]

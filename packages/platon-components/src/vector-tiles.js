@@ -13,6 +13,8 @@ export const VectorTiles = props => {
       {props.vectors.map(vector => {
         const fraction = (vector.distanceValue + 50) / props.step;
         const horizontal = (vector.vectorOrigin === 'left' || vector.vectorOrigin === 'right');
+        const width = horizontal && fraction > 1 ? Math.ceil(fraction) * props.step : props.size;
+        const height = !horizontal && fraction > 1 ? Math.ceil(fraction) * props.step : props.size;
 
         return (
           <VectorTile
@@ -24,11 +26,10 @@ export const VectorTiles = props => {
             vectorOrigin={vector.vectorOrigin}
             vectorDirection={vector.vectorDirection}
             size={props.size}
+            width={width}
+            height={height}
             margin={props.gutter}
             name={vector.vectorName}
-            style={horizontal && fraction > 1 && {
-              width: Math.ceil(fraction) * props.step
-            }}
             />
         );
       })}

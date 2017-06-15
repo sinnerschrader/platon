@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-primitives';
 import {Artboard} from './artboard';
 import {ColorTiles} from './color-tiles';
-import {Distances} from './distances';
+import {DistanceTiles} from './distance-tiles';
 import {FontTiles} from './font-tiles';
 import {VectorTiles} from './vector-tiles';
 
@@ -50,13 +50,15 @@ export const DesignSystem = props => (
       </Artboard>
     }
     {
-      props.distances &&
+      props.distanceTiles &&
         <Artboard
-          name={props.distances.name}
-          style={artboardStyle}
+          name={props.distanceTiles.name}
+          style={[artboardStyle, tiledArtboardStyle]}
           >
-          <Distances
-            distances={props.distances.distances}
+          <DistanceTiles
+            distances={props.distanceTiles.distances}
+            size={TILE_SIZE}
+            gutter={TILE_MARGIN}
             />
         </Artboard>
     }

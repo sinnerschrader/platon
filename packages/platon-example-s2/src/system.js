@@ -6,7 +6,7 @@ export default function System() {
   return (
     <DesignSystem
       colorTiles={config.colorTiles}
-      distances={config.distances}
+      distanceTiles={config.distanceTiles}
       fontTiles={config.fontTiles}
       vectorTiles={config.vectorTiles}
       />

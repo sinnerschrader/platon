@@ -1,62 +1,37 @@
 import React from 'react';
 import {Image, Text, View} from 'react-primitives';
-import {descriptionStyles, headlineStyles, sublineStyles} from './color-tile';
+import {Tile} from './tile';
 
-const TILE_STAGE_PADDING = 20;
-const TILE_DESCRIPTION_HEIGHT = 50;
-const VECTOR_LABEL_HEIGHT = 25;
-const ELEMENT_DIMESION = 50;
 const SPACE_IMAGE = 'https://upload.wikimedia.org/wikipedia/de/archive/5/54/20080903102003%21SchraffurLeer.png';
 
 export const VectorTile = props => {
   const vertical = (props.vectorOrigin === 'bottom' || props.vectorOrigin === 'top');
   return (
-    <View
+    <Tile
+      size={props.size}
+      width={props.width}
+      height={props.height}
+      margin={props.margin}
       name={`${VectorTile.displayName} "${props.name}"`}
-      style={[
-        {
-          backgroundColor: '#f2f2f2',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          margin: props.margin
-        },
-        vertical && {
-          height: Math.max(props.size, props.distanceValue + ELEMENT_DIMESION + VECTOR_LABEL_HEIGHT + TILE_DESCRIPTION_HEIGHT + (TILE_STAGE_PADDING * 2)),
-          width: props.size
-        },
-        !vertical && {
-          width: Math.max(props.size, props.distanceValue + ELEMENT_DIMESION + VECTOR_LABEL_HEIGHT + TILE_DESCRIPTION_HEIGHT + (TILE_STAGE_PADDING * 2)),
-          height: props.size
-        },
-        props.style
-      ]}
+      headline={props.vectorName}
+      subline={props.vectorValue}
       >
-      <TileStage
-        length={props.distanceValue}
-        origin={props.vectorOrigin}
-        >
-        {
-          props.vectorDirection === 'outside' ?
-            <Vector
-              length={props.distanceValue}
-              name={props.distanceName}
-              origin={props.vectorOrigin}
-              /> :
-            <Padding
-              length={props.distanceValue}
-              name={props.distanceName}
-              origin={props.vectorOrigin}
-              vertical={vertical}
-              horizontal={!vertical}
-              />
-        }
-      </TileStage>
-      <TileDescription
-        headline={props.vectorName}
-        subline={props.vectorValue}
-        />
-    </View>
+      {
+        props.vectorDirection === 'outside' ?
+          <Vector
+            length={props.distanceValue}
+            name={props.distanceName}
+            origin={props.vectorOrigin}
+            /> :
+          <Padding
+            length={props.distanceValue}
+            name={props.distanceName}
+            origin={props.vectorOrigin}
+            vertical={vertical}
+            horizontal={!vertical}
+            />
+      }
+    </Tile>
   );
 };
 
@@ -407,50 +382,3 @@ function ElementCorner(props) {
 }
 
 ElementCorner.displayName = 'ElementCorner';
-
-function TileDescription(props) {
-  return (
-    <View
-      style={descriptionStyles}
-      >
-      <Text style={headlineStyles}>
-        {props.headline}
-      </Text>
-      <Text style={sublineStyles}>
-        {props.subline}
-      </Text>
-    </View>
-  );
-}
-
-TileDescription.displayName = 'TileDescription';
-
-function TileStage(props) {
-  const vertical = props.origin === 'right' || props.origin === 'left';
-
-  return (
-    <View
-      name={'Tile Stage'}
-      style={[
-        {
-          display: 'flex',
-          padding: TILE_STAGE_PADDING
-        },
-        {
-          paddingTop: (Math.max(250, props.length + (20 * 2) + 74) / 2) - ((54 + 26 + props.length) / 2)
-        },
-        vertical && {
-          paddingTop: (250 / 2) - (150 / 2),
-          alignItems: 'center',
-          justifyContent: 'center'
-        }
-      ]}
-      >
-      <View>
-        {props.children}
-      </View>
-    </View>
-  );
-}
-
-TileStage.displayName = 'TileStage';

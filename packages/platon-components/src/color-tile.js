@@ -1,53 +1,37 @@
 import React from 'react';
-import {Text, View} from 'react-primitives';
-
-const containerStyles = {
-  flexDirection: 'column',
-  justifyContent: 'flex-end'
-};
-
-export const descriptionStyles = {
-  paddingTop: 10,
-  paddingRight: 20,
-  paddingBottom: 10,
-  paddingLeft: 20,
-  backgroundColor: '#fff'
-};
-
-export const headlineStyles = {
-  fontWeight: 'bold',
-  fontSize: 20,
-  lineHeight: 30
-};
-
-export const sublineStyles = {
-  fontSize: 14,
-  lineHeight: 20
-};
+import {View} from 'react-primitives';
+import {Tile} from './tile';
 
 export const ColorTile = props => (
-  <View
+  <Tile
     name={`Color Tile "${props.name}"`}
-    style={[
-      containerStyles,
-      {
-        backgroundColor: props.hex,
-        position: 'relative',
-        height: props.size,
-        width: props.size,
-        margin: props.margin
-      }
-    ]}
+    headline={props.name}
+    subline={props.hex}
+    size={props.size}
+    margin={props.margin}
     >
-    <View name="Color Description" style={descriptionStyles}>
-      <Text name="Color Name" style={headlineStyles}>
-        {props.name}
-      </Text>
-      <Text name="Color Hex" style={sublineStyles}>
-        {props.hex}
-      </Text>
-    </View>
-  </View>
+    <Color
+      hex={props.hex}
+      size={props.size}
+      />
+  </Tile>
 );
 
 ColorTile.displayName = 'ColorTile';
+
+function Color(props) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        width: props.size,
+        height: props.size,
+        backgroundColor: props.hex
+      }}
+      />
+  );
+}
