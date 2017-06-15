@@ -5,6 +5,7 @@ import {ColorTiles} from './color-tiles';
 import {DistanceTiles} from './distance-tiles';
 import {FontTiles} from './font-tiles';
 import {VectorTiles} from './vector-tiles';
+import {descriptionStyles, sublineStyles, headlineStyles} from './color-tile';
 
 const TILE_SIZE = 300;
 const TILE_MARGIN = 10;
@@ -89,36 +90,58 @@ export const DesignSystem = props => (
           >
           <View
             name="Description Container"
-            style={{
-              padding: 20,
-              width: 200
-            }}
+            style={[
+              descriptionStyles,
+              {
+                width: 200
+              }
+            ]}
             >
-            <Text>
-              Name
-            </Text>
-            <View
-              name="key value 1"
-              style={{
-                display: 'flex',
-                flexDirection: 'row'
-              }}
+            <Text
+              style={[
+                headlineStyles,
+                {
+                  marginBottom: 20
+                }
+              ]}
               >
-              <Text
-                style={{
-                  paddingRight: 20
-                }}
-                >
-                key
-              </Text>
-              <Text
-                style={{
-                  width: 140
-                }}
-                >
-                value value value value
-              </Text>
-            </View>
+              Headline 1
+            </Text>
+            <KeyValue
+              name="font-family"
+              value="Maison bold"
+              valueKey="font-family"
+              />
+            <KeyValue
+              name="font-size"
+              value={90}
+              valueKey="font-size"
+              />
+            <KeyValue
+              name="line-height"
+              value={90}
+              valueKey="line-height"
+              />
+            <KeyValue
+              name="font-color"
+              value="#000000"
+              valueKey="font-color"
+              />
+            <KeyValue
+              name="text-transform"
+              value="none"
+              valueKey="text-transform"
+              />
+            <KeyValue
+              name="text-align"
+              value="left"
+              valueKey="text-align"
+              />
+            <KeyValue
+              name="letter-spacing"
+              value={1.41}
+              valueKey="letter-spacing"
+              />
           </View>
           <View
             name="Stage Container"
@@ -133,6 +156,13 @@ export const DesignSystem = props => (
             >
             <Text
               style={{
+                fontFamily: 'Maison-Bold',
+                fontSize: 90,
+                lineHeight: 90,
+                color: '#000000',
+                textTransform: 'none',
+                textAlign: 'left',
+                letterSpacing: 1.41
               }}
               >
               Die Philosophie bietet mir einen Hafen, während ich andere mit den Stürmen kämpfen sehe.
@@ -145,3 +175,38 @@ export const DesignSystem = props => (
 );
 
 DesignSystem.displayName = 'DesignSystem';
+
+function KeyValue(props) {
+  console.log(props);
+  return (
+    <View
+      name={props.name}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: 10
+      }}
+      >
+      <Text
+        style={[
+          sublineStyles,
+          {
+            paddingRight: 20
+          }
+        ]}
+        >
+        {props.valueKey}
+      </Text>
+      <Text
+        style={[
+          sublineStyles,
+          {
+            fontWeight: 'bold'
+          }
+        ]}
+        >
+        {String(props.value)}
+      </Text>
+    </View>
+  );
+}
