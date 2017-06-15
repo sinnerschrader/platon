@@ -10,18 +10,27 @@ const VectorTileStyle = {
 export const VectorTiles = props => {
   return (
     <View name={VectorTiles.displayName} style={VectorTileStyle}>
-      {props.vectors.map(vector => (
-        <VectorTile
-          key={vector.distanceValue}
-          distanceValue={vector.distanceValue}
-          distanceName={vector.distanceName}
-          vectorValue={vector.vectorValue}
-          vectorName={vector.vectorName}
-          size={props.size}
-          margin={props.gutter}
-          />
-        )
-      )}
+      {props.vectors.map(vector => {
+        const fraction = (vector.distanceValue + 50) / props.step;
+        const horizontal = (vector.vectorOrigin === 'left' || vector.vectorOrigin === 'right');
+
+        return (
+          <VectorTile
+            key={JSON.stringify(vector)}
+            distanceValue={vector.distanceValue}
+            distanceName={vector.distanceName}
+            vectorValue={vector.vectoralue}
+            vectorName={vector.vectorName}
+            vectorOrigin={vector.vectorOrigin}
+            vectorDirection={vector.vectorDirection}
+            size={props.size}
+            margin={props.gutter}
+            style={horizontal && fraction > 1 && {
+              width: Math.ceil(fraction) * props.step
+            }}
+            />
+        );
+      })}
     </View>
   );
 };

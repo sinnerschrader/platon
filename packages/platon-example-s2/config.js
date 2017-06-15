@@ -228,14 +228,66 @@ export default {
       {
         distanceName: 'M',
         distanceValue: 50,
-        vectorName: 'Outside bottom M',
-        vectorValue: 'Outside bottom M'
+        vectorName: 'Top M',
+        vectorValue: 'Top M',
+        vectorOrigin: 'top',
+        vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Right M',
+        vectorValue: 'Right M',
+        vectorOrigin: 'right',
+        vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Bottom M',
+        vectorValue: 'Bottom M',
+        vectorOrigin: 'bottom',
+        vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Left M',
+        vectorValue: 'Left M',
+        vectorOrigin: 'left',
+        vectorDirection: 'outside'
       },
       {
         distanceName: 'L',
-        distanceValue: 200,
-        vectorName: 'Outside bottom L',
-        vectorValue: 'Outside bottom L'
+        distanceValue: 300,
+        vectorName: 'Right L',
+        vectorValue: 'Right L',
+        vectorOrigin: 'right',
+        vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Left L',
+        vectorValue: 'Left L',
+        vectorOrigin: 'left',
+        vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Top L',
+        vectorValue: 'Top L',
+        vectorOrigin: 'top',
+        vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Bottom L',
+        vectorValue: 'Bottom L',
+        vectorOrigin: 'bottom',
+        vectorDirection: 'outside'
       }
     ]
   }
