@@ -25,6 +25,7 @@ export const VectorTiles = props => {
             vectorDirection={vector.vectorDirection}
             size={props.size}
             margin={props.gutter}
+            name={vector.vectorName}
             style={horizontal && fraction > 1 && {
               width: Math.ceil(fraction) * props.step
             }}

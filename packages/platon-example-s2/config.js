@@ -288,6 +288,70 @@ export default {
         vectorValue: 'Bottom L',
         vectorOrigin: 'bottom',
         vectorDirection: 'outside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Top M',
+        vectorValue: 'Top M',
+        vectorOrigin: 'top',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Right M',
+        vectorValue: 'Right M',
+        vectorOrigin: 'right',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Bottom M',
+        vectorValue: 'Bottom M',
+        vectorOrigin: 'bottom',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'M',
+        distanceValue: 50,
+        vectorName: 'Left M',
+        vectorValue: 'Left M',
+        vectorOrigin: 'left',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Top L',
+        vectorValue: 'Top L',
+        vectorOrigin: 'top',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Bottom L',
+        vectorValue: 'Bottom L',
+        vectorOrigin: 'bottom',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Right L',
+        vectorValue: 'Right L',
+        vectorOrigin: 'right',
+        vectorDirection: 'inside'
+      },
+      {
+        distanceName: 'L',
+        distanceValue: 300,
+        vectorName: 'Left L',
+        vectorValue: 'Left L',
+        vectorOrigin: 'left',
+        vectorDirection: 'inside'
       }
     ]
   }

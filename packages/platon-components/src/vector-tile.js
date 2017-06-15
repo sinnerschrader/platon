@@ -9,6 +9,7 @@ const ELEMENT_DIMESION = 50;
 const SPACE_IMAGE = 'https://upload.wikimedia.org/wikipedia/de/archive/5/54/20080903102003%21SchraffurLeer.png';
 
 export const VectorTile = props => {
+  const vertical = (props.vectorOrigin === 'bottom' || props.vectorOrigin === 'top');
   return (
     <View
       name={`${VectorTile.displayName} "${props.name}"`}
@@ -20,11 +21,11 @@ export const VectorTile = props => {
           justifyContent: 'space-between',
           margin: props.margin
         },
-        (props.vectorOrigin === 'bottom' || props.vectorOrigin === 'top') && {
+        vertical && {
           height: Math.max(props.size, props.distanceValue + ELEMENT_DIMESION + VECTOR_LABEL_HEIGHT + TILE_DESCRIPTION_HEIGHT + (TILE_STAGE_PADDING * 2)),
           width: props.size
         },
-        (props.vectorOrigin === 'right' || props.vectorOrigin === 'left') && {
+        !vertical && {
           width: Math.max(props.size, props.distanceValue + ELEMENT_DIMESION + VECTOR_LABEL_HEIGHT + TILE_DESCRIPTION_HEIGHT + (TILE_STAGE_PADDING * 2)),
           height: props.size
         },
@@ -35,12 +36,21 @@ export const VectorTile = props => {
         length={props.distanceValue}
         origin={props.vectorOrigin}
         >
-        <Vector
-          length={props.distanceValue}
-          name={props.distanceName}
-          origin={props.vectorOrigin}
-          direction={props.vectorDirection}
-          />
+        {
+          props.vectorDirection === 'outside' ?
+            <Vector
+              length={props.distanceValue}
+              name={props.distanceName}
+              origin={props.vectorOrigin}
+              /> :
+            <Padding
+              length={props.distanceValue}
+              name={props.distanceName}
+              origin={props.vectorOrigin}
+              vertical={vertical}
+              horizontal={!vertical}
+              />
+        }
       </TileStage>
       <TileDescription
         headline={props.vectorName}
@@ -52,7 +62,95 @@ export const VectorTile = props => {
 
 VectorTile.displayName = 'Vector Tile';
 
+function Padding(props) {
+  const size = Math.max(150, props.length + 100);
+
+  return (
+    <View
+      style={{
+        alignItems: 'center'
+      }}
+      >
+      <Element
+        width={props.horizontal ? size : 150}
+        height={props.vertical ? size : 150}
+        >
+        <View
+          style={[
+            {
+              position: 'absolute',
+              display: 'flex',
+              alignItems: 'center'
+            },
+            props.origin === 'top' && {
+              top: 0,
+              flexDirection: 'column'
+            },
+            props.origin === 'right' && {
+              right: 1,
+              flexDirection: 'row-reverse'
+            },
+            props.origin === 'bottom' && {
+              bottom: 1,
+              flexDirection: 'column-reverse'
+            },
+            props.origin === 'left' && {
+              left: 0,
+              flexDirection: 'row'
+            }
+          ]}
+          >
+          <Image
+            source={SPACE_IMAGE}
+            resizeMode="repeat"
+            style={[
+              {
+                display: 'flex',
+                alignItems: 'center',
+                height: props.vertical ? props.length : 148,
+                width: props.horizontal ? props.length : 148,
+                opacity: 0.5
+              },
+              props.origin === 'top' && {
+                top: 0,
+                borderBottomWidth: 1,
+                borderBottomColor: '#000',
+                borderBottomStyle: 'solid'
+              },
+              props.origin === 'right' && {
+                right: 1,
+                borderLeftWidth: 1,
+                borderLeftColor: '#000',
+                borderLeftStyle: 'solid'
+              },
+              props.origin === 'bottom' && {
+                bottom: 1,
+                borderTopWidth: 1,
+                borderTopColor: '#000',
+                borderTopStyle: 'solid'
+              },
+              props.origin === 'left' && {
+                left: 0,
+                borderRightWidth: 1,
+                borderRightColor: '#000',
+                borderRightStyle: 'solid'
+              }
+            ]}
+            />
+          <VectorLabel origin={props.origin} invert>
+            {props.name}
+          </VectorLabel>
+        </View>
+      </Element>
+    </View>
+  );
+}
+
+Padding.displayName = 'Padding';
+
 function Vector(props) {
+  const vertical = props.origin === 'top' || props.origin === 'bottom';
+
   return (
     <View
       name="Vector"
@@ -105,13 +203,17 @@ function Vector(props) {
           {props.name}
         </VectorLabel>
       </View>
-      <Element origin={props.origin}/>
+      <Element
+        width={vertical ? 150 : 50}
+        height={vertical ? 50 : 150}
+        origin={props.origin}
+        />
     </View>
   );
 }
 
 function VectorLabel(props) {
-  const arrow = getArrow(props.origin);
+  const arrow = getArrow(props.origin, props.invert);
   return (
     <View
       name={`Vector Label ${props.children}`}
@@ -138,17 +240,17 @@ function VectorLabel(props) {
 
 VectorLabel.displayName = 'VectorLabel';
 
-function getArrow(origin) {
+function getArrow(origin, invert = false) {
   switch (origin) {
     case 'top':
-      return '⤒';
+      return invert ? '⤓' : '⤒';
     case 'right':
-      return '⇥';
+      return invert ? '⇤' : '⇥';
     case 'left':
-      return '⇤';
+      return invert ? '⇥' : '⇤';
     case 'bottom':
     default:
-      return '⤓';
+      return invert ? '⤒' : '⤓';
   }
 }
 
@@ -216,8 +318,10 @@ function Element(props) {
     <View
       name="Element Container"
       style={{
+        position: 'relative',
         padding: 0,
-        position: 'relative'
+        width: props.width,
+        height: props.height
       }}
       >
       <View
@@ -229,7 +333,9 @@ function Element(props) {
             borderColor: '#000000',
             borderWidth: 1,
             shadowColor: 'rgba(0, 0, 0, 0.2)',
-            shadowRadius: 5
+            shadowRadius: 5,
+            width: props.width,
+            height: props.height
           },
           props.origin === 'top' && {
             shadowOffset: {
@@ -254,17 +360,11 @@ function Element(props) {
               width: -2,
               height: 0
             }
-          },
-          (props.origin === 'top' || props.origin === 'bottom') && {
-            width: 150,
-            height: 50
-          },
-          (props.origin === 'right' || props.origin === 'left') && {
-            width: 50,
-            height: 150
           }
         ]}
-        />
+        >
+        {props.children}
+      </View>
       <ElementCorner top right/>
       <ElementCorner bottom right/>
       <ElementCorner bottom left/>
