@@ -67,43 +67,6 @@ export default {
             value: 42
           }
         ]
-      },
-      {
-        name: '1920',
-        values: [
-          {
-            name: 'XXS',
-            value: 3
-          },
-          {
-            name: 'XS',
-            value: 6
-          },
-          {
-            name: 'S',
-            value: 12
-          },
-          {
-            name: 'M',
-            value: 18
-          },
-          {
-            name: 'L',
-            value: 24
-          },
-          {
-            name: 'XL',
-            value: 42
-          },
-          {
-            name: 'XXL',
-            value: 66
-          },
-          {
-            name: '3XL',
-            value: 96
-          }
-        ]
       }
     ]
   },
