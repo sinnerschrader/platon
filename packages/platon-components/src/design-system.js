@@ -78,21 +78,20 @@ export const DesignSystem = props => (
     {
       <Artboard
         name="Text Styles"
-        style={[artboardStyle, tiledArtboardStyle]}
+        style={[artboardStyle]}
         >
         <View
           name="Tile"
           style={{
             display: 'flex',
-            flexDirection: 'row',
-            width: 960
+            flexDirection: 'row'
           }}
           >
           <View
             name="Description Container"
             style={{
-              width: 200,
-              padding: 20
+              padding: 20,
+              width: 200
             }}
             >
             <Text>
@@ -102,8 +101,7 @@ export const DesignSystem = props => (
               name="key value 1"
               style={{
                 display: 'flex',
-                flexDirection: 'row',
-                width: 200
+                flexDirection: 'row'
               }}
               >
               <Text
@@ -113,7 +111,11 @@ export const DesignSystem = props => (
                 >
                 key
               </Text>
-              <Text>
+              <Text
+                style={{
+                  width: 140
+                }}
+                >
                 value value value value
               </Text>
             </View>
@@ -122,7 +124,11 @@ export const DesignSystem = props => (
             name="Stage Container"
             style={{
               backgroundColor: '#f2f2f2',
-              padding: 20
+              paddingTop: 20,
+              paddingRight: 20,
+              paddingBottom: 40,
+              paddingLeft: 20,
+              width: 600
             }}
             >
             <Text
