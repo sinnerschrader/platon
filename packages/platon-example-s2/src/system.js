@@ -8,6 +8,7 @@ export default function System() {
       colorTiles={config.colorTiles}
       distanceTiles={config.distanceTiles}
       fontTiles={config.fontTiles}
+      textTiles={config.textTiles}
       vectorTiles={config.vectorTiles}
       />
   );

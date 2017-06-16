@@ -4,6 +4,7 @@ import {Artboard} from './artboard';
 import {ColorTiles} from './color-tiles';
 import {DistanceTiles} from './distance-tiles';
 import {FontTiles} from './font-tiles';
+import {TextTiles} from './text-tiles';
 import {VectorTiles} from './vector-tiles';
 
 const TILE_SIZE = 300;
@@ -72,6 +73,18 @@ export const DesignSystem = props => (
           size={TILE_SIZE}
           gutter={TILE_MARGIN}
           step={TILE_SIZE + TILE_MARGIN}
+          />
+      </Artboard>
+    }
+    {props.textTiles &&
+      <Artboard
+        name={props.textTiles.name}
+        style={[artboardStyle, tiledArtboardStyle]}
+        >
+        <TextTiles
+          size={TILE_SIZE}
+          texts={props.textTiles.texts}
+          gutter={TILE_MARGIN}
           />
       </Artboard>
     }
