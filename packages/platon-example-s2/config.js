@@ -124,6 +124,32 @@ export default {
       }
     ]
   },
+  textTiles: {
+    name: 'S2 Text Styles',
+    texts: [
+      {
+        name: 'Headline 1',
+        fontFamily: 'Maison-Bold',
+        fontSize: 90,
+        lineHeight: 90,
+        textAlign: 'center'
+      },
+      {
+        name: 'Headline 2',
+        fontFamily: 'Maison-Bold',
+        fontSize: 48,
+        lineHeight: 68,
+        letterSpacing: 1
+      },
+      {
+        name: 'Headline 2 serif',
+        fontFamily: 'NoeText-Regular',
+        fontSize: 32,
+        lineHeight: 40,
+        textAlign: 'left'
+      }
+    ]
+  },
   vectorTiles: {
     name: 'S2 Vectors',
     vectors: [
