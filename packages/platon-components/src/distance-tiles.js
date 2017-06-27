@@ -1,16 +1,10 @@
 import React from 'react';
-import {View} from 'react-primitives';
+import {Tiles} from './tiles';
 import {DistanceTile} from './distance-tile';
 
 export function DistanceTiles(props) {
   return (
-    <View
-      name="DistanceTiles"
-      style={{
-        flexDirection: 'row',
-        flexWrap: 'wrap'
-      }}
-      >
+    <Tiles name="DistanceTiles">
       {
         props.distances.map(d => (
           <DistanceTile
@@ -22,7 +16,7 @@ export function DistanceTiles(props) {
             />
         ))
       }
-    </View>
+    </Tiles>
   );
 }
 

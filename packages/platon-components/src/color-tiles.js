@@ -1,15 +1,10 @@
 import React from 'react';
-import {View} from 'react-primitives';
+import {Tiles} from './tiles';
 import {ColorTile} from './color-tile';
-
-const colorTileStyle = {
-  flexDirection: 'row',
-  flexWrap: 'wrap'
-};
 
 export const ColorTiles = props => {
   return (
-    <View name={ColorTiles.displayName} style={colorTileStyle}>
+    <Tiles name={ColorTiles.displayName}>
       {props.colors.map(c => (
         <ColorTile
           key={c.name}
@@ -20,8 +15,8 @@ export const ColorTiles = props => {
           />
         )
       )}
-    </View>
+    </Tiles>
   );
 };
 
-ColorTiles.displayName = 'Color Tiles';
+ColorTiles.displayName = 'ColorTiles';

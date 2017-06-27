@@ -1,15 +1,10 @@
 import React from 'react';
-import {View} from 'react-primitives';
+import {Tiles} from './tiles';
 import {FontTile} from './font-tile';
-
-const FontTileStyle = {
-  flexDirection: 'row',
-  flexWrap: 'wrap'
-};
 
 export const FontTiles = props => {
   return (
-    <View name={FontTiles.displayName} style={FontTileStyle}>
+    <Tiles name={FontTiles.displayName}>
       {props.fonts.map(font => (
         <FontTile
           key={font.family}
@@ -23,7 +18,7 @@ export const FontTiles = props => {
           />
         )
       )}
-    </View>
+    </Tiles>
   );
 };
 

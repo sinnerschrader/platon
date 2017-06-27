@@ -1,21 +1,15 @@
 import React from 'react';
-import {View} from 'react-primitives';
+import {Tiles} from './tiles';
 import {VectorTile} from './vector-tile';
-
-const VectorTileStyle = {
-  flexDirection: 'row',
-  flexWrap: 'wrap'
-};
 
 export const VectorTiles = props => {
   return (
-    <View name={VectorTiles.displayName} style={VectorTileStyle}>
+    <Tiles name={VectorTiles.displayName}>
       {props.vectors.map(vector => {
         const fraction = (vector.distanceValue + 50) / props.step;
         const horizontal = (vector.vectorOrigin === 'left' || vector.vectorOrigin === 'right');
         const width = horizontal && fraction > 1 ? Math.ceil(fraction) * props.step : props.size;
         const height = !horizontal && fraction > 1 ? Math.ceil(fraction) * props.step : props.size;
-
         return (
           <VectorTile
             key={JSON.stringify(vector)}
@@ -33,7 +27,7 @@ export const VectorTiles = props => {
             />
         );
       })}
-    </View>
+    </Tiles>
   );
 };
 

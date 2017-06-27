@@ -5,6 +5,7 @@ import {ColorTiles} from './color-tiles';
 import {DistanceTiles} from './distance-tiles';
 import {FontTiles} from './font-tiles';
 import {TextTiles} from './text-tiles';
+import {SpaceTiles} from './space-tiles';
 import {VectorTiles} from './vector-tiles';
 
 const TILE_SIZE = 300;
@@ -26,29 +27,31 @@ const tiledArtboardStyle = {
 
 export const DesignSystem = props => (
   <View>
-    {props.colorTiles &&
-      <Artboard
-        name={props.colorTiles.name}
-        style={[artboardStyle, tiledArtboardStyle]}
-        >
-        <ColorTiles
-          colors={props.colorTiles.colors}
-          size={TILE_SIZE}
-          gutter={TILE_MARGIN}
-          />
-      </Artboard>
+    {
+      props.colorTiles &&
+        <Artboard
+          name={props.colorTiles.name}
+          style={[artboardStyle, tiledArtboardStyle]}
+          >
+          <ColorTiles
+            colors={props.colorTiles.colors}
+            size={TILE_SIZE}
+            gutter={TILE_MARGIN}
+            />
+          </Artboard>
     }
-    {props.fontTiles &&
-      <Artboard
-        name={props.fontTiles.name}
-        style={[artboardStyle, tiledArtboardStyle]}
-        >
-        <FontTiles
-          fonts={props.fontTiles.fonts}
-          size={TILE_SIZE}
-          gutter={TILE_MARGIN}
-          />
-      </Artboard>
+    {
+      props.fontTiles &&
+        <Artboard
+          name={props.fontTiles.name}
+          style={[artboardStyle, tiledArtboardStyle]}
+          >
+          <FontTiles
+            fonts={props.fontTiles.fonts}
+            size={TILE_SIZE}
+            gutter={TILE_MARGIN}
+            />
+          </Artboard>
     }
     {
       props.distanceTiles &&
@@ -63,18 +66,33 @@ export const DesignSystem = props => (
             />
         </Artboard>
     }
-    {props.vectorTiles &&
-      <Artboard
-        name={props.vectorTiles.name}
-        style={[artboardStyle, tiledArtboardStyle]}
-        >
-        <VectorTiles
-          vectors={props.vectorTiles.vectors}
-          size={TILE_SIZE}
-          gutter={TILE_MARGIN}
-          step={TILE_SIZE + TILE_MARGIN}
-          />
-      </Artboard>
+    {
+      props.vectorTiles &&
+        <Artboard
+          name={props.vectorTiles.name}
+          style={[artboardStyle, tiledArtboardStyle]}
+          >
+          <VectorTiles
+            vectors={props.vectorTiles.vectors}
+            size={TILE_SIZE}
+            gutter={TILE_MARGIN}
+            step={TILE_SIZE + TILE_MARGIN}
+            />
+          </Artboard>
+    }
+    {
+      props.spaceTiles &&
+        <Artboard
+          name={props.spaceTiles.name}
+          style={[artboardStyle, tiledArtboardStyle]}
+          >
+          <SpaceTiles
+            spaces={props.spaceTiles.spaces}
+            size={TILE_SIZE}
+            gutter={TILE_MARGIN}
+            step={TILE_SIZE + TILE_MARGIN}
+            />
+          </Artboard>
     }
     {props.textTiles &&
       <Artboard

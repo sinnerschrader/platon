@@ -1,5 +1,7 @@
 import React from 'react';
-import {Image, Text, View} from 'react-primitives';
+import {Image, View} from 'react-primitives';
+import {Element} from './element';
+import {Label} from './label';
 import {Tile} from './tile';
 
 const SPACE_IMAGE = 'https://upload.wikimedia.org/wikipedia/de/archive/5/54/20080903102003%21SchraffurLeer.png';
@@ -112,9 +114,9 @@ function Padding(props) {
               }
             ]}
             />
-          <VectorLabel origin={props.origin} invert>
+          <Label origin={props.origin} invert>
             {props.name}
-          </VectorLabel>
+          </Label>
         </View>
       </Element>
     </View>
@@ -174,9 +176,9 @@ function Vector(props) {
           origin={props.origin}
           size={props.length}
           />
-        <VectorLabel origin={props.origin}>
+        <Label origin={props.origin}>
           {props.name}
-        </VectorLabel>
+        </Label>
       </View>
       <Element
         width={vertical ? 150 : 50}
@@ -185,48 +187,6 @@ function Vector(props) {
         />
     </View>
   );
-}
-
-function VectorLabel(props) {
-  const arrow = getArrow(props.origin, props.invert);
-  return (
-    <View
-      name={`Vector Label ${props.children}`}
-      style={{
-        backgroundColor: '#222',
-        width: 50
-      }}
-      >
-      <Text
-        style={{
-          fontSize: 12,
-          lineHeight: 16,
-          color: '#fff',
-          textAlign: 'center',
-          paddingTop: 5,
-          paddingBottom: 5
-        }}
-        >
-        {`${arrow} ${props.children}`}
-      </Text>
-    </View>
-  );
-}
-
-VectorLabel.displayName = 'VectorLabel';
-
-function getArrow(origin, invert = false) {
-  switch (origin) {
-    case 'top':
-      return invert ? '⤓' : '⤒';
-    case 'right':
-      return invert ? '⇤' : '⇥';
-    case 'left':
-      return invert ? '⇥' : '⇤';
-    case 'bottom':
-    default:
-      return invert ? '⤒' : '⤓';
-  }
 }
 
 function VectorSpace(props) {
@@ -287,98 +247,3 @@ function VectorSpace(props) {
 }
 
 VectorSpace.displayName = 'VectorSpace';
-
-function Element(props) {
-  return (
-    <View
-      name="Element Container"
-      style={{
-        position: 'relative',
-        padding: 0,
-        width: props.width,
-        height: props.height
-      }}
-      >
-      <View
-        name="Element"
-        style={[
-          {
-            backgroundColor: '#fff',
-            borderStyle: 'solid',
-            borderColor: '#000000',
-            borderWidth: 1,
-            shadowColor: 'rgba(0, 0, 0, 0.2)',
-            shadowRadius: 5,
-            width: props.width,
-            height: props.height
-          },
-          props.origin === 'top' && {
-            shadowOffset: {
-              width: 0,
-              height: -2
-            }
-          },
-          props.origin === 'right' && {
-            shadowOffset: {
-              width: 2,
-              height: 0
-            }
-          },
-          props.origin === 'bottom' && {
-            shadowOffset: {
-              width: 0,
-              height: 2
-            }
-          },
-          props.origin === 'left' && {
-            shadowOffset: {
-              width: -2,
-              height: 0
-            }
-          }
-        ]}
-        >
-        {props.children}
-      </View>
-      <ElementCorner top right/>
-      <ElementCorner bottom right/>
-      <ElementCorner bottom left/>
-      <ElementCorner top left/>
-    </View>
-  );
-}
-
-Element.displayName = 'Element';
-
-function ElementCorner(props) {
-  return (
-    <View
-      name={'Element corner'}
-      style={[
-        {
-          backgroundColor: '#fff',
-          borderStyle: 'solid',
-          borderColor: '#000000',
-          borderWidth: 1,
-          width: 5,
-          height: 5,
-          position: 'absolute'
-        },
-        props.left && {
-          left: -2
-        },
-        props.right && {
-          right: -2
-        },
-        props.top && {
-          top: -2
-        },
-        props.bottom && {
-          bottom: -2
-        }
-      ]}
-      />
-  );
-}
-
-ElementCorner.displayName = 'ElementCorner';

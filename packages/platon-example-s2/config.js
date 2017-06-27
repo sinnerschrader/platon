@@ -124,6 +124,79 @@ export default {
       }
     ]
   },
+  spaceTiles: {
+    name: 'S2 Spaces',
+    spaces: [
+      {
+        name: 'Space name',
+        description: 'Outside M',
+        direction: 'outside',
+        top: {
+          name: 'M',
+          value: 18
+        },
+        right: {
+          name: 'M',
+          value: 18
+        },
+        bottom: {
+          name: 'M',
+          value: 18
+        },
+        left: {
+          name: 'M',
+          value: 18
+        }
+      },
+      {
+        name: 'Space name',
+        description: 'Inside M',
+        direction: 'inside',
+        top: {
+          name: 'M',
+          value: 18
+        },
+        right: {
+          name: 'M',
+          value: 18
+        },
+        bottom: {
+          name: 'M',
+          value: 18
+        },
+        left: {
+          name: 'M',
+          value: 18
+        }
+      },
+      {
+        name: 'Space name',
+        description: 'Inside M',
+        direction: 'inside',
+        right: {
+          name: 'M',
+          value: 18
+        },
+        left: {
+          name: 'M',
+          value: 18
+        }
+      },
+      {
+        name: 'Space name',
+        description: 'Outside M',
+        direction: 'outside',
+        right: {
+          name: 'M',
+          value: 18
+        },
+        left: {
+          name: 'M',
+          value: 18
+        }
+      }
+    ]
+  },
   textTiles: {
     name: 'S2 Text Styles',
     texts: [
