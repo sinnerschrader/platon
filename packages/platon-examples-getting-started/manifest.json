@@ -1,0 +1,10 @@
+{
+	"compatibleVersion": 3,
+	"bundleVersion": 1,
+	"commands": [
+		{
+			"name": "Render",
+			"script": "index.js"
+		}
+	]
+}

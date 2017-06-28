@@ -8,9 +8,11 @@
     "start:components": "lerna run --stream --scope=platon-components start",
     "start:s2:web": "lerna run --stream --scope=platon-example-s2 start:web",
     "start:s2:sketch": "lerna run --stream --scope=platon-example-s2 start:sketch",
+    "start:getting-started": "lerna run --stream --scope=platon-example-getting-started start",
     "lerna": "lerna",
     "postinstall": "npm run lerna bootstrap",
-    "reinstall": "git clean -xdf && npm install"
+    "reinstall": "npm run clean && npm install",
+    "clean": "git clean -xdf"
   },
   "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
   "license": "MIT",

@@ -1,0 +1,20 @@
+{
+  "name": "platon-example-getting-started",
+  "version": "1.0.0",
+  "private": true,
+  "main": "platon.sketchplugin",
+  "manifest": "manifest.json",
+  "scripts": {
+    "start": "skpm build --watch --run"
+  },
+  "dependencies": {
+    "platon-components": "^1.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-sketchapp": "^0.11.3",
+    "react-test-renderer": "^15.6.1"
+  },
+  "devDependencies": {
+    "skpm": "^0.9.16"
+  }
+}
