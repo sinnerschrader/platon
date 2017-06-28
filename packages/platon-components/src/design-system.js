@@ -32,11 +32,13 @@ export const DesignSystem = props => (
         <Artboard
           name={props.colorTiles.name}
           style={[artboardStyle, tiledArtboardStyle]}
+          page={props.page}
+          left={getOffset(0, props)}
           >
           <ColorTiles
             colors={props.colorTiles.colors}
             size={TILE_SIZE}
-            gutter={TILE_MARGIN}
+            left={0}
             />
           </Artboard>
     }
@@ -45,6 +47,8 @@ export const DesignSystem = props => (
         <Artboard
           name={props.fontTiles.name}
           style={[artboardStyle, tiledArtboardStyle]}
+          page={props.page}
+          left={getOffset(1, props)}
           >
           <FontTiles
             fonts={props.fontTiles.fonts}
@@ -58,6 +62,8 @@ export const DesignSystem = props => (
         <Artboard
           name={props.distanceTiles.name}
           style={[artboardStyle, tiledArtboardStyle]}
+          page={props.page}
+          left={getOffset(2, props)}
           >
           <DistanceTiles
             distances={props.distanceTiles.distances}
@@ -71,6 +77,8 @@ export const DesignSystem = props => (
         <Artboard
           name={props.vectorTiles.name}
           style={[artboardStyle, tiledArtboardStyle]}
+          page={props.page}
+          left={getOffset(3, props)}
           >
           <VectorTiles
             vectors={props.vectorTiles.vectors}
@@ -85,6 +93,8 @@ export const DesignSystem = props => (
         <Artboard
           name={props.spaceTiles.name}
           style={[artboardStyle, tiledArtboardStyle]}
+          page={props.page}
+          left={getOffset(4, props)}
           >
           <SpaceTiles
             spaces={props.spaceTiles.spaces}
@@ -98,6 +108,8 @@ export const DesignSystem = props => (
       <Artboard
         name={props.textTiles.name}
         style={[artboardStyle, tiledArtboardStyle]}
+        page={props.page}
+        left={getOffset(5, props)}
         >
         <TextTiles
           size={TILE_SIZE}
@@ -110,3 +122,8 @@ export const DesignSystem = props => (
 );
 
 DesignSystem.displayName = 'DesignSystem';
+
+function getOffset(index, props) {
+  const count = Object.keys(props).slice(0, index).filter(Boolean).length;
+  return count * (ARTBOARD_WIDTH + 100);
+}
