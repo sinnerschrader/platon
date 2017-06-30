@@ -5,7 +5,7 @@
   "main": "platon-example-getting-started.sketchplugin",
   "manifest": "manifest.json",
   "scripts": {
-    "prestart": "open -a 'Sketch' && osascript ensure-sketch.scpt",
+    "prestart": "ensure-sketch-document",
     "start": "skpm build --watch --run",
     "reset": "echo 'export default {};' > config.js"
   },
@@ -17,7 +17,7 @@
     "react-test-renderer": "^15.6.1"
   },
   "devDependencies": {
-    "run-jxa": "^1.1.0",
+    "ensure-sketch-document": "^1.0.0",
     "skpm": "^0.9.16"
   }
 }

@@ -6,6 +6,7 @@
   "manifest": "src/manifest.json",
   "scripts": {
     "start": "stmux -- [ \"npm run start:sketch\" .. \"npm run start:web\" ]",
+    "prestart:sketch": "ensure-sketch-document",
     "start:sketch": "skpm build --watch --run",
     "start:web": "webpack-dev-server --config webpack.web.js"
   },
@@ -23,6 +24,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.4.0",
+    "ensure-sketch-document": "^1.0.0",
     "skpm": "^0.9.16",
     "stmux": "^1.4.11",
     "webpack": "^3.0.0",

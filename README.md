@@ -5,9 +5,8 @@
 ## Getting started
 
 ```sh
-# Open an empty sketch document to render into
 git clone https://github.com/sinnerschrader/platon.git
 cd platon
 npm install
-npm start # watches sources, opens browser, renders to sketch
+npm start
 ```
