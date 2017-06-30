@@ -3,7 +3,7 @@
   "description": "Ensure a sketch document is opened",
   "repository": "https://github.com/sinnerschrader/platon",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "bin": "./ensure-sketch-document.js",
   "dependencies": {
     "applescript": "^1.0.0"

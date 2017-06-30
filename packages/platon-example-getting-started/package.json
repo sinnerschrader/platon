@@ -1,6 +1,6 @@
 {
   "name": "platon-example-getting-started",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "main": "platon-example-getting-started.sketchplugin",
   "manifest": "manifest.json",
@@ -17,7 +17,7 @@
     "react-test-renderer": "^15.6.1"
   },
   "devDependencies": {
-    "ensure-sketch-document": "^1.0.0",
+    "ensure-sketch-document": "^1.0.3",
     "skpm": "^0.9.16"
   }
 }
