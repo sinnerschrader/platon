@@ -5,7 +5,8 @@
   "main": "platon.sketchplugin",
   "manifest": "manifest.json",
   "scripts": {
-    "start": "skpm build --watch --run"
+    "start": "skpm build --watch --run",
+    "reset": "echo 'module.exports = {};' > config.js"
   },
   "dependencies": {
     "platon-components": "^1.0.0",
