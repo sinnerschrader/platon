@@ -2,6 +2,8 @@
   "name": "platon",
   "version": "1.0.0",
   "description": "Create universals design systems from archetypes",
+  "repository": "https://github.com/sinnerschrader/platon",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "start": "stmux -- [ [ \"npm run start:components\" .. \"npm run start:s2:web\" .. \"npm run start:s2:sketch\" ] : -s 1/3 -f bash ]",

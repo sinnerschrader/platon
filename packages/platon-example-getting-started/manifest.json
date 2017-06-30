@@ -4,7 +4,14 @@
 	"commands": [
 		{
 			"name": "Render",
+			"identifier": "render",
 			"script": "index.js"
 		}
-	]
+	],
+	"menu": {
+		"isRoot": false,
+		"items": [
+			"render"
+		]
+	}
 }

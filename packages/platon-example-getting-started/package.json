@@ -2,11 +2,12 @@
   "name": "platon-example-getting-started",
   "version": "1.0.2",
   "private": true,
-  "main": "platon.sketchplugin",
+  "main": "platon-example-getting-started.sketchplugin",
   "manifest": "manifest.json",
   "scripts": {
+    "prestart": "open -a 'Sketch' && osascript ensure-sketch.scpt",
     "start": "skpm build --watch --run",
-    "reset": "echo 'module.exports = {};' > config.js"
+    "reset": "echo 'export default {};' > config.js"
   },
   "dependencies": {
     "platon-components": "^1.0.2",
@@ -16,6 +17,7 @@
     "react-test-renderer": "^15.6.1"
   },
   "devDependencies": {
+    "run-jxa": "^1.1.0",
     "skpm": "^0.9.16"
   }
 }

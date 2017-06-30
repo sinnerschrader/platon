@@ -5,6 +5,7 @@ import config from './config';
 
 export default context => {
   const page = context.document.currentPage();
+
   render((
     <DesignSystem
       page={page}
