@@ -1,6 +1,6 @@
 {
   "name": "platon-example-getting-started",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "main": "platon.sketchplugin",
   "manifest": "manifest.json",
@@ -9,7 +9,7 @@
     "reset": "echo 'module.exports = {};' > config.js"
   },
   "dependencies": {
-    "platon-components": "^1.0.1",
+    "platon-components": "^1.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-sketchapp": "^0.11.3",

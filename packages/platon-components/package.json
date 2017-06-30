@@ -1,6 +1,6 @@
 {
   "name": "platon-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/",
   "scripts": {
     "start": "babel --watch src/ -d lib/",
