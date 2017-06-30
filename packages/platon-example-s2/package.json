@@ -1,6 +1,6 @@
 {
   "name": "platon-example-s2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "main": "platon.sketchplugin",
   "manifest": "src/manifest.json",
@@ -10,7 +10,7 @@
     "start:web": "webpack-dev-server --config webpack.web.js"
   },
   "dependencies": {
-    "platon-components": "^1.0.0",
+    "platon-components": "^1.0.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-primitives": "^0.4.2",
