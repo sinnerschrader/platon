@@ -1,4 +1,5 @@
 * **Guides**
+  * [Prerequesites](guides-prerequesites.md)
   * [Getting started](guides-getting-started.md)
 
 * **API**
