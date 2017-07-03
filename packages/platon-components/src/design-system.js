@@ -25,105 +25,110 @@ const tiledArtboardStyle = {
   width: ARTBOARD_WIDTH
 };
 
-export const DesignSystem = props => (
-  <View>
-    {
-      props.colors &&
-        <Artboard
-          name={props.colors.name}
-          style={[artboardStyle, tiledArtboardStyle]}
-          page={props.page}
-          left={getOffset(0, props)}
-          >
-          <Colors
-            tokens={props.colors.tokens}
-            size={TILE_SIZE}
-            left={0}
-            />
+export function DesignSystem(props) {
+  const offsets = [];
+  return (
+    <View>
+      {
+        props.colors &&
+          <Artboard
+            name={props.colors.name}
+            style={[artboardStyle, tiledArtboardStyle]}
+            page={props.page}
+            left={getOffset(props, offsets)}
+            >
+            <Colors
+              tokens={props.colors.tokens}
+              size={TILE_SIZE}
+              left={0}
+              />
+            </Artboard>
+      }
+      {
+        props.fonts &&
+          <Artboard
+            name={props.fonts.name}
+            style={[artboardStyle, tiledArtboardStyle]}
+            page={props.page}
+            left={getOffset(props, offsets)}
+            >
+            <Fonts
+              tokens={props.fonts.tokens}
+              size={TILE_SIZE}
+              gutter={TILE_MARGIN}
+              />
+            </Artboard>
+      }
+      {
+        props.sizes &&
+          <Artboard
+            name={props.sizes.name}
+            style={[artboardStyle, tiledArtboardStyle]}
+            page={props.page}
+            left={getOffset(props, offsets)}
+            >
+            <Sizes
+              tokens={props.sizes.tokens}
+              size={TILE_SIZE}
+              gutter={TILE_MARGIN}
+              />
           </Artboard>
-    }
-    {
-      props.fonts &&
+      }
+      {
+        props.vectors &&
+          <Artboard
+            name={props.vectors.name}
+            style={[artboardStyle, tiledArtboardStyle]}
+            page={props.page}
+            left={getOffset(props, offsets)}
+            >
+            <Vectors
+              tokens={props.vectors.tokens}
+              size={TILE_SIZE}
+              gutter={TILE_MARGIN}
+              step={TILE_SIZE + TILE_MARGIN}
+              />
+            </Artboard>
+      }
+      {
+        props.spaces &&
+          <Artboard
+            name={props.spaces.name}
+            style={[artboardStyle, tiledArtboardStyle]}
+            page={props.page}
+            left={getOffset(props, offsets)}
+            >
+            <Spaces
+              tokens={props.spaces.tokens}
+              size={TILE_SIZE}
+              gutter={TILE_MARGIN}
+              step={TILE_SIZE + TILE_MARGIN}
+              />
+            </Artboard>
+      }
+      {props.texts &&
         <Artboard
-          name={props.fonts.name}
+          name={props.texts.name}
           style={[artboardStyle, tiledArtboardStyle]}
           page={props.page}
-          left={getOffset(1, props)}
+          left={getOffset(props, offsets)}
           >
-          <Fonts
-            tokens={props.fonts.tokens}
+          <Texts
             size={TILE_SIZE}
-            gutter={TILE_MARGIN}
-            />
-          </Artboard>
-    }
-    {
-      props.sizes &&
-        <Artboard
-          name={props.sizes.name}
-          style={[artboardStyle, tiledArtboardStyle]}
-          page={props.page}
-          left={getOffset(2, props)}
-          >
-          <Sizes
-            tokens={props.sizes.tokens}
-            size={TILE_SIZE}
+            tokens={props.texts.tokens}
             gutter={TILE_MARGIN}
             />
         </Artboard>
-    }
-    {
-      props.vectors &&
-        <Artboard
-          name={props.vectors.name}
-          style={[artboardStyle, tiledArtboardStyle]}
-          page={props.page}
-          left={getOffset(3, props)}
-          >
-          <Vectors
-            tokens={props.vectors.tokens}
-            size={TILE_SIZE}
-            gutter={TILE_MARGIN}
-            step={TILE_SIZE + TILE_MARGIN}
-            />
-          </Artboard>
-    }
-    {
-      props.spaces &&
-        <Artboard
-          name={props.spaces.name}
-          style={[artboardStyle, tiledArtboardStyle]}
-          page={props.page}
-          left={getOffset(4, props)}
-          >
-          <Spaces
-            tokens={props.spaces.tokens}
-            size={TILE_SIZE}
-            gutter={TILE_MARGIN}
-            step={TILE_SIZE + TILE_MARGIN}
-            />
-          </Artboard>
-    }
-    {props.texts &&
-      <Artboard
-        name={props.texts.name}
-        style={[artboardStyle, tiledArtboardStyle]}
-        page={props.page}
-        left={getOffset(5, props)}
-        >
-        <Texts
-          size={TILE_SIZE}
-          tokens={props.texts.tokens}
-          gutter={TILE_MARGIN}
-          />
-      </Artboard>
-    }
-  </View>
-);
+      }
+    </View>
+  );
+}
 
 DesignSystem.displayName = 'DesignSystem';
 
-function getOffset(index, props) {
-  const count = Object.keys(props).slice(0, index).filter(Boolean).length;
-  return count * (ARTBOARD_WIDTH + 100);
+function getOffset(props, offsets) {
+  const count = Object.keys(props).slice(0, offsets.length).filter(Boolean).length;
+  const offset = count * (ARTBOARD_WIDTH + 100);
+  offsets.push(offset);
+  return offset;
 }

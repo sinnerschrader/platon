@@ -5,7 +5,6 @@
   "main": "platon-example-basic.sketchplugin",
   "manifest": "manifest.json",
   "scripts": {
-    "prestart": "ensure-sketch-document",
     "start": "skpm build --watch --run",
     "reset": "echo 'export default {};' > config.js"
   },

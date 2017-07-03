@@ -4,14 +4,14 @@
 	"commands": [
 		{
 			"name": "Render",
-			"identifier": "render",
+			"identifier": "render-getting-started",
 			"script": "index.js"
 		}
 	],
 	"menu": {
 		"isRoot": false,
 		"items": [
-			"render"
+			"render-getting-started"
 		]
 	}
 }

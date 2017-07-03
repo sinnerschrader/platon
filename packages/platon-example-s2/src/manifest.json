@@ -4,26 +4,14 @@
 	"commands": [
 		{
 			"name": "Render Platon",
-			"identifier": "render-platon",
+			"identifier": "render-platon-example-s2",
 			"script": "index.sketch.js"
-		},
-		{
-			"name": "Set Color Palette",
-			"identifier": "set-palette-platon",
-			"script": "./cmd/set-palette.js"
-		},
-		{
-			"name": "Export Color Palette",
-			"identifier": "export-palette-platon",
-			"script": "./cmd/export-palette.js"
 		}
 	],
 	"menu": {
 		"isRoot": false,
 		"items": [
-			"render-platon",
-			"set-palette-platon",
-			"export-palette-platon"
+			"render-platon-example-s2"
 		]
 	}
 }

@@ -172,24 +172,15 @@ export default {
         }
       },
       {
-        name: 'All Padding M',
+        name: 'Dented',
         value: {
           direction: 'inside',
-          top: {
-            name: 'M',
-            value: 18
-          },
-          right: {
-            name: 'M',
-            value: 18
-          },
-          bottom: {
-            name: 'M',
-            value: 18
-          },
+          top: 18,
+          right: 18,
+          bottom: 18,
           left: {
-            name: 'M',
-            value: 18
+            name: 'XL',
+            value: 36
           }
         }
       },
@@ -263,8 +254,10 @@ export default {
         name: 'Top M',
         description: 'May have a description',
         value: {
-          length: 50,
-          lengthName: 'M',
+          length: {
+            name: 'M',
+            value: 50
+          },
           origin: 'top',
           direction: 'outside'
         }
@@ -272,7 +265,6 @@ export default {
       {
         name: 'Right M',
         value: {
-          lengthName: 'M',
           length: 50,
           origin: 'right',
           direction: 'outside'
@@ -281,7 +273,6 @@ export default {
       {
         name: 'Bottom M',
         value: {
-          lengthName: 'M',
           length: 50,
           origin: 'bottom',
           direction: 'outside'
@@ -290,7 +281,6 @@ export default {
       {
         name: 'Left M',
         value: {
-          lengthName: 'M',
           length: 50,
           origin: 'left',
           direction: 'outside'
@@ -299,7 +289,6 @@ export default {
       {
         name: 'Right L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'right',
           direction: 'outside'
@@ -308,7 +297,6 @@ export default {
       {
         name: 'Left L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'left',
           direction: 'outside'
@@ -317,7 +305,6 @@ export default {
       {
         name: 'Top L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'top',
           direction: 'outside'
@@ -326,7 +313,6 @@ export default {
       {
         name: 'Bottom L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'bottom',
           direction: 'outside'
@@ -335,7 +321,6 @@ export default {
       {
         name: 'Top M',
         value: {
-          lengthName: 'M',
           length: 50,
           origin: 'top',
           direction: 'inside'
@@ -344,7 +329,6 @@ export default {
       {
         name: 'Right M',
         value: {
-          lengthName: 'M',
           length: 50,
           origin: 'right',
           direction: 'inside'
@@ -362,7 +346,6 @@ export default {
       {
         name: 'Left M',
         value: {
-          lengthName: 'M',
           length: 50,
           origin: 'left',
           direction: 'inside'
@@ -371,7 +354,6 @@ export default {
       {
         name: 'Top L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'top',
           direction: 'inside'
@@ -380,7 +362,6 @@ export default {
       {
         name: 'Bottom L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'bottom',
           direction: 'inside'
@@ -389,7 +370,6 @@ export default {
       {
         name: 'Right L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'right',
           direction: 'inside'
@@ -398,7 +378,6 @@ export default {
       {
         name: 'Left L',
         value: {
-          lengthName: 'L',
           length: 300,
           origin: 'left',
           direction: 'inside'

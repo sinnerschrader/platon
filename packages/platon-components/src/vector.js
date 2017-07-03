@@ -3,11 +3,14 @@ import {Image, View} from 'react-primitives';
 import {Element} from './element';
 import {Label} from './label';
 import {Tile} from './tile';
+import {getValue, getName} from './util';
 
 const SPACE_IMAGE = 'https://upload.wikimedia.org/wikipedia/de/archive/5/54/20080903102003%21SchraffurLeer.png';
 
 export const Vector = props => {
   const vertical = (props.origin === 'bottom' || props.origin === 'top');
+  const length = getValue(props.length);
+  const name = getName(props.length);
   return (
     <Tile
       size={props.size}
@@ -21,13 +24,13 @@ export const Vector = props => {
       {
         props.direction === 'outside' ?
           <VectorSymbol
-            length={props.length}
-            name={props.lengthName}
+            length={length}
+            name={name}
             origin={props.origin}
             /> :
           <Padding
-            length={props.length}
-            name={props.lengthName}
+            length={length}
+            name={name}
             origin={props.origin}
             vertical={vertical}
             horizontal={!vertical}

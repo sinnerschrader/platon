@@ -4,6 +4,7 @@ import styled from 'styled-components/primitives';
 import {Element} from './element';
 import {Label} from './label';
 import {Tile} from './tile';
+import {getValue, getName} from './util';
 
 const SPACE_IMAGE = 'https://upload.wikimedia.org/wikipedia/de/archive/5/54/20080903102003%21SchraffurLeer.png';
 const DEFAULT_DISTANCE = {value: 0};
@@ -52,14 +53,23 @@ function SpaceSwatch(props) {
   const left = props.left || DEFAULT_DISTANCE;
   const spaces = {top, right, bottom, left};
 
+  const t = getValue(top);
+  const r = getValue(right);
+  const b = getValue(bottom);
+  const l = getValue(left);
+
   const vs = Object.keys(spaces)
     .reduce((r, k) => {
-      const v = spaces[k];
+      const v = typeof spaces[k] === 'object' ?
+        spaces[k] : {};
+
+      v.name = String(getName(spaces[k]) || getValue(spaces[k]));
+      v.value = getValue(spaces[k]);
       v.origin = k;
       r.push(v);
       return r;
     }, [])
-    .filter(v => typeof v.name === 'string');
+    .filter(v => typeof v.name === 'string' && v.name !== '0');
 
   const x = ELEMENT_WIDTH + Math.max(sum([right, left]), 2);
   const y = ELEMENT_HEIGHT + Math.max(sum([top, bottom]), 2);
@@ -81,14 +91,14 @@ function SpaceSwatch(props) {
         shadow={false}
         width={ELEMENT_WIDTH}
         height={ELEMENT_HEIGHT}
-        top={top.value}
-        right={right.value}
-        bottom={bottom.value}
-        left={left.value}
-        borderTop={top.value !== 0}
-        borderRight={right.value !== 0}
-        borderLeft={left.value !== 0}
-        borderBottom={bottom.value !== 0}
+        top={t}
+        right={r}
+        bottom={b}
+        left={l}
+        borderTop={t !== 0}
+        borderRight={r !== 0}
+        borderBottom={b !== 0}
+        borderLeft={l !== 0}
         />
       <View
         style={[
@@ -98,10 +108,10 @@ function SpaceSwatch(props) {
             height: inside ? ELEMENT_HEIGHT : y
           },
           inside && {
-            top: top.value,
-            right: right.value,
-            bottom: bottom.value,
-            left: left.value
+            top: t,
+            right: r,
+            bottom: b,
+            left: l
           }
         ]}
         >
@@ -167,7 +177,7 @@ function orient(origin, dimensions) {
 
 function sum(v) {
   return v.reduce((s, d) => {
-    s += d.value;
+    s += getValue(d);
     return s;
   }, 0);
 }

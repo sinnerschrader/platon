@@ -2,7 +2,7 @@
   "name": "platon-example-s2",
   "version": "1.0.4",
   "private": true,
-  "main": "platon.sketchplugin",
+  "main": "platon-example-s2.sketchplugin",
   "manifest": "src/manifest.json",
   "scripts": {
     "start": "stmux -- [ \"npm run start:sketch\" .. \"npm run start:web\" ]",

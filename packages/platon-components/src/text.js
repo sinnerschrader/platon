@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text as T, View} from 'react-primitives';
 import {Tile} from './tile';
+import {getName, getValue} from './util';
 
 const tableStyle = {
   marginTop: 50,
@@ -11,89 +12,68 @@ const tableStyle = {
 };
 
 export function Text(props) {
-  const fontSize = props.fontSize || 12;
+  const fontSize = getValue(props.fontSize) || 12;
   const factor = Math.min(Math.max(1, Math.ceil(fontSize / 30)), 4);
-  const size = props.size * factor;
+  const size = (getValue(props.size) || 0) * factor;
   const pairSize = Math.min(size / 2.5, 300);
 
   return (
     <Tile
       headline={props.name}
       subline={props.description}
-      width={props.size * factor}
+      width={size}
       margin={props.margin}
       >
       <T
         style={{
-          fontFamily: props.fontFamily,
+          fontFamily: getValue(props.fontFamily),
           fontSize: fontSize,
-          lineHeight: props.lineHeight,
-          color: props.color,
-          textTransform: props.textTransform,
+          lineHeight: getValue(props.lineHeight),
+          color: getValue(props.color),
+          textTransform: getValue(props.textTransform),
           textAlign: props.textAlign,
-          letterSpacing: props.letterSpacing
+          letterSpacing: getValue(props.letterSpacing)
         }}
         >
         Die Philosophie bietet mir einen Hafen,
         während ich andere mit den Stürmen kämpfen sehe.
       </T>
       <View style={[tableStyle, {width: size - 40}]}>
-        {
-          typeof props.fontFamily === 'string' &&
-            <Pair
-              label="font-family"
-              value={props.fontFamily}
-              width={pairSize}
-              />
-        }
-        {
-          typeof props.fontSize === 'number' &&
-            <Pair
-              label="font-size"
-              value={props.fontSize}
-              width={pairSize}
-              />
-        }
-        {
-          typeof props.lineHeight === 'number' &&
-            <Pair
-              label="line-height"
-              value={props.lineHeight}
-              width={pairSize}
-              />
-        }
-        {
-          typeof props.color === 'string' &&
-            <Pair
-              label="color"
-              value={props.color}
-              width={pairSize}
-              />
-        }
-        {
-          typeof props.textTransform === 'string' &&
-            <Pair
-              label="text-transform"
-              value={props.textTransform}
-              width={pairSize}
-              />
-        }
-        {
-          typeof props.textAlign === 'string' &&
-            <Pair
-              label="text-align"
-              value={props.textAlign}
-              width={pairSize}
-              />
-        }
-        {
-          typeof props.letterSpacing === 'string' &&
-            <Pair
-              label="letter-spacing"
-              value={props.letterSpacing}
-              width={size / 2}
-              />
-        }
+        <Pair
+          label="font-family"
+          value={props.fontFamily}
+          width={pairSize}
+          />
+        <Pair
+          label="font-size"
+          value={props.fontSize}
+          width={pairSize}
+          />
+        <Pair
+          label="line-height"
+          value={props.lineHeight}
+          width={pairSize}
+          />
+        <Pair
+          label="color"
+          value={props.color}
+          width={pairSize}
+          />
+        <Pair
+          label="text-transform"
+          value={props.textTransform}
+          width={pairSize}
+          />
+        <Pair
+          label="text-align"
+          value={props.textAlign}
+          width={pairSize}
+          />
+        <Pair
+          label="letter-spacing"
+          value={props.letterSpacing}
+          width={size / 2}
+          />
       </View>
     </Tile>
   );
@@ -112,16 +92,20 @@ const pairStyles = {
 };
 
 function Pair(props) {
+  if (typeof props.value === 'undefined' || props.value === null) {
+    return null;
+  }
+
+  const value = getName(props.value) || getValue(props.value);
+
   return (
     <View style={[pairStyles, {width: props.width}]}>
       <View>
-        <T>
-          {String(props.label)}
-        </T>
+        <T>{String(props.label)}</T>
       </View>
       <View>
         <T style={{fontWeight: 'bold'}}>
-          {String(props.value)}
+          {String(value)}
         </T>
       </View>
     </View>

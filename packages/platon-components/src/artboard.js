@@ -22,26 +22,32 @@ function BrowserArtboard(props) {
   );
 }
 
-class SketchArtboard extends React.Component {
-  componentDidMount() {
+function SketchArtboard(props) {
+  const Art = require('react-sketchapp').Artboard;
+  const toJSON = require('react-sketchapp').renderToJSON;
+  const fromJSON = require('sketchapp-json-plugin').fromSJSONDictionary;
+  const RedBox = require('react-sketchapp').RedBox;
+  const toLayer = e => fromJSON(toJSON(e));
+
+  try {
+    const layer = toLayer(<Art style={props.style} name={props.name}>{props.children}</Art>);
+    const frame = layer.frame();
+    frame.setX(props.left);
+    frame.setY(props.top);
     setTimeout(() => {
-      const Art = require('react-sketchapp').Artboard;
-      const toJSON = require('react-sketchapp').renderToJSON;
-      const fromJSON = require('sketchapp-json-plugin').fromSJSONDictionary;
-      const toLayer = e => fromJSON(toJSON(e));
-      const layer = toLayer(<Art style={this.props.style} name={this.props.name}>{this.props.children}</Art>);
-
-      const frame = layer.frame();
-      frame.setX(this.props.left);
-      frame.setY(this.props.top);
-
-      this.props.page.addLayers([layer]);
+      props.page.addLayers([layer]);
+    });
+  } catch (err) {
+    const layer = toLayer(<Art style={props.style} name={props.name}><RedBox error={err}/></Art>);
+    const frame = layer.frame();
+    frame.setX(props.left);
+    frame.setY(props.top);
+    setTimeout(() => {
+      props.page.addLayers([layer]);
     });
   }
 
-  render() {
-    return null;
-  }
+  return null;
 }
 
 SketchArtboard.defaultProps = {
