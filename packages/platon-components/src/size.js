@@ -16,17 +16,17 @@ const barsStyles = {
   marginBottom: BARS_MARGIN_BOTTOM
 };
 
-export function DistanceTile(props) {
-  const count = props.values.length;
+export function Size(props) {
+  const count = props.value.length;
   const width = Math.max(props.size, (count * BAR_WIDTH) + (count * BAR_MARGIN));
-  const max = props.values.map(v => v.value).sort((a, b) => b - a)[0];
+  const max = props.value.map(v => v.value).sort((a, b) => b - a)[0];
   const height = Math.max(props.size, max + (STAGE_PADDING * 4) + BARS_MARGIN_BOTTOM + BAR_LABEL_HEIGHT + BAR_VALUE_HEIGHT);
 
   return (
     <Tile
-      name="DistanceTile"
-      headline={props.headline}
-      subline={props.subline}
+      name="Size"
+      headline={props.name}
+      subline={props.description}
       size={props.size}
       width={Math.ceil(width / props.size) * props.size}
       height={Math.ceil(height / props.size) * props.size}
@@ -34,7 +34,7 @@ export function DistanceTile(props) {
       >
       <View style={barsStyles} name="Bars">
         {
-          props.values.map(value => {
+          props.value.map(value => {
             return (
               <Bar
                 key={JSON.stringify(value)}
@@ -49,7 +49,7 @@ export function DistanceTile(props) {
   );
 }
 
-DistanceTile.displayName = 'DistanceTile';
+Size.displayName = 'Size';
 
 const barStyle = {
   display: 'flex',

@@ -12,16 +12,16 @@ const ELEMENT_HEIGHT = 70;
 const LABEL_WIDTH = 50;
 const LABEL_HEIGHT = 25;
 
-export function SpaceTile(props) {
+export function Space(props) {
   return (
     <Tile
       size={props.size}
       margin={props.margin}
       headline={props.name}
       subline={props.description}
-      name={`${SpaceTile.displayName} "${props.name}"`}
+      name={`${Space.displayName} "${props.name}"`}
       >
-      <Space
+      <SpaceSwatch
         direction={props.direction}
         top={props.top}
         right={props.right}
@@ -32,7 +32,7 @@ export function SpaceTile(props) {
   );
 }
 
-SpaceTile.displayName = 'Space Tile';
+Space.displayName = 'Space';
 
 const StyledImage = styled.Image`
   position: absolute;
@@ -43,7 +43,7 @@ const StyledImage = styled.Image`
   opacity: 0.5;
 `;
 
-function Space(props) {
+function SpaceSwatch(props) {
   const outside = props.direction === 'outside';
   const inside = props.direction === 'inside';
   const top = props.top || DEFAULT_DISTANCE;

@@ -6,29 +6,29 @@ import {Tile} from './tile';
 
 const SPACE_IMAGE = 'https://upload.wikimedia.org/wikipedia/de/archive/5/54/20080903102003%21SchraffurLeer.png';
 
-export const VectorTile = props => {
-  const vertical = (props.vectorOrigin === 'bottom' || props.vectorOrigin === 'top');
+export const Vector = props => {
+  const vertical = (props.origin === 'bottom' || props.origin === 'top');
   return (
     <Tile
       size={props.size}
       width={props.width}
       height={props.height}
       margin={props.margin}
-      name={`${VectorTile.displayName} "${props.name}"`}
-      headline={props.vectorName}
-      subline={props.vectorValue}
+      name={`${Vector.displayName} "${props.name}"`}
+      headline={props.name}
+      subline={props.description}
       >
       {
-        props.vectorDirection === 'outside' ?
-          <Vector
-            length={props.distanceValue}
-            name={props.distanceName}
-            origin={props.vectorOrigin}
+        props.direction === 'outside' ?
+          <VectorSymbol
+            length={props.length}
+            name={props.lengthName}
+            origin={props.origin}
             /> :
           <Padding
-            length={props.distanceValue}
-            name={props.distanceName}
-            origin={props.vectorOrigin}
+            length={props.length}
+            name={props.lengthName}
+            origin={props.origin}
             vertical={vertical}
             horizontal={!vertical}
             />
@@ -37,7 +37,7 @@ export const VectorTile = props => {
   );
 };
 
-VectorTile.displayName = 'Vector Tile';
+Vector.displayName = 'Vector';
 
 function Padding(props) {
   const size = Math.max(150, props.length + 100);
@@ -125,7 +125,7 @@ function Padding(props) {
 
 Padding.displayName = 'Padding';
 
-function Vector(props) {
+function VectorSymbol(props) {
   const vertical = props.origin === 'top' || props.origin === 'bottom';
 
   return (

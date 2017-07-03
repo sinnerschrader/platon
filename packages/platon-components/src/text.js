@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-primitives';
+import {Text as T, View} from 'react-primitives';
 import {Tile} from './tile';
 
 const tableStyle = {
@@ -10,7 +10,7 @@ const tableStyle = {
   borderTopColor: '#000'
 };
 
-export function TextTile(props) {
+export function Text(props) {
   const fontSize = props.fontSize || 12;
   const factor = Math.min(Math.max(1, Math.ceil(fontSize / 30)), 4);
   const size = props.size * factor;
@@ -19,10 +19,11 @@ export function TextTile(props) {
   return (
     <Tile
       headline={props.name}
+      subline={props.description}
       width={props.size * factor}
       margin={props.margin}
       >
-      <Text
+      <T
         style={{
           fontFamily: props.fontFamily,
           fontSize: fontSize,
@@ -35,7 +36,7 @@ export function TextTile(props) {
         >
         Die Philosophie bietet mir einen Hafen,
         während ich andere mit den Stürmen kämpfen sehe.
-      </Text>
+      </T>
       <View style={[tableStyle, {width: size - 40}]}>
         {
           typeof props.fontFamily === 'string' &&
@@ -98,7 +99,7 @@ export function TextTile(props) {
   );
 }
 
-TextTile.defaultProps = {
+Text.defaultProps = {
   fontSize: 12,
   color: '#000',
   textAlign: 'left'
@@ -114,14 +115,14 @@ function Pair(props) {
   return (
     <View style={[pairStyles, {width: props.width}]}>
       <View>
-        <Text>
+        <T>
           {String(props.label)}
-        </Text>
+        </T>
       </View>
       <View>
-        <Text style={{fontWeight: 'bold'}}>
+        <T style={{fontWeight: 'bold'}}>
           {String(props.value)}
-        </Text>
+        </T>
       </View>
     </View>
   );

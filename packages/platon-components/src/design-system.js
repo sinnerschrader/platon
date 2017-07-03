@@ -1,12 +1,12 @@
 import React from 'react';
 import {View} from 'react-primitives';
 import {Artboard} from './artboard';
-import {ColorTiles} from './color-tiles';
-import {DistanceTiles} from './distance-tiles';
-import {FontTiles} from './font-tiles';
-import {TextTiles} from './text-tiles';
-import {SpaceTiles} from './space-tiles';
-import {VectorTiles} from './vector-tiles';
+import {Colors} from './colors';
+import {Sizes} from './sizes';
+import {Fonts} from './fonts';
+import {Texts} from './texts';
+import {Spaces} from './spaces';
+import {Vectors} from './vectors';
 
 const TILE_SIZE = 300;
 const TILE_MARGIN = 10;
@@ -28,60 +28,60 @@ const tiledArtboardStyle = {
 export const DesignSystem = props => (
   <View>
     {
-      props.colorTiles &&
+      props.colors &&
         <Artboard
-          name={props.colorTiles.name}
+          name={props.colors.name}
           style={[artboardStyle, tiledArtboardStyle]}
           page={props.page}
           left={getOffset(0, props)}
           >
-          <ColorTiles
-            colors={props.colorTiles.colors}
+          <Colors
+            tokens={props.colors.tokens}
             size={TILE_SIZE}
             left={0}
             />
           </Artboard>
     }
     {
-      props.fontTiles &&
+      props.fonts &&
         <Artboard
-          name={props.fontTiles.name}
+          name={props.fonts.name}
           style={[artboardStyle, tiledArtboardStyle]}
           page={props.page}
           left={getOffset(1, props)}
           >
-          <FontTiles
-            fonts={props.fontTiles.fonts}
+          <Fonts
+            tokens={props.fonts.tokens}
             size={TILE_SIZE}
             gutter={TILE_MARGIN}
             />
           </Artboard>
     }
     {
-      props.distanceTiles &&
+      props.sizes &&
         <Artboard
-          name={props.distanceTiles.name}
+          name={props.sizes.name}
           style={[artboardStyle, tiledArtboardStyle]}
           page={props.page}
           left={getOffset(2, props)}
           >
-          <DistanceTiles
-            distances={props.distanceTiles.distances}
+          <Sizes
+            tokens={props.sizes.tokens}
             size={TILE_SIZE}
             gutter={TILE_MARGIN}
             />
         </Artboard>
     }
     {
-      props.vectorTiles &&
+      props.vectors &&
         <Artboard
-          name={props.vectorTiles.name}
+          name={props.vectors.name}
           style={[artboardStyle, tiledArtboardStyle]}
           page={props.page}
           left={getOffset(3, props)}
           >
-          <VectorTiles
-            vectors={props.vectorTiles.vectors}
+          <Vectors
+            tokens={props.vectors.tokens}
             size={TILE_SIZE}
             gutter={TILE_MARGIN}
             step={TILE_SIZE + TILE_MARGIN}
@@ -89,31 +89,31 @@ export const DesignSystem = props => (
           </Artboard>
     }
     {
-      props.spaceTiles &&
+      props.spaces &&
         <Artboard
-          name={props.spaceTiles.name}
+          name={props.spaces.name}
           style={[artboardStyle, tiledArtboardStyle]}
           page={props.page}
           left={getOffset(4, props)}
           >
-          <SpaceTiles
-            spaces={props.spaceTiles.spaces}
+          <Spaces
+            tokens={props.spaces.tokens}
             size={TILE_SIZE}
             gutter={TILE_MARGIN}
             step={TILE_SIZE + TILE_MARGIN}
             />
           </Artboard>
     }
-    {props.textTiles &&
+    {props.texts &&
       <Artboard
-        name={props.textTiles.name}
+        name={props.texts.name}
         style={[artboardStyle, tiledArtboardStyle]}
         page={props.page}
         left={getOffset(5, props)}
         >
-        <TextTiles
+        <Texts
           size={TILE_SIZE}
-          texts={props.textTiles.texts}
+          tokens={props.texts.tokens}
           gutter={TILE_MARGIN}
           />
       </Artboard>

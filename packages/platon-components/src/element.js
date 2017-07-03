@@ -2,19 +2,6 @@ import React from 'react';
 import {View} from 'react-primitives';
 import styled from 'styled-components/primitives';
 
-const StyledContainer = styled.View`
-  position: ${props => props.absolute ? 'absolute' : 'relative'};
-  padding: 0;
-  width: ${props => props.width};
-  height: ${props => props.height};
-  ${props => props.absolute && `
-    top: ${props.top};
-    right: ${props.right};
-    bottom: ${props.bottom};
-    left: ${props.left};
-  `}
-`;
-
 const StyledElement = styled.View`
   background-color: #fff;
   border-style: solid;
@@ -30,7 +17,7 @@ export function Element(props) {
   const absolute = [props.top, props.right, props.bottom, props.left].some(c => typeof c !== 'undefined');
 
   return (
-    <StyledContainer
+    <ElementContainer
       absolute={absolute}
       name="Element Container"
       width={props.width}
@@ -72,7 +59,7 @@ export function Element(props) {
           <ElementCorner key={3} top left/>
         ]
       }
-    </StyledContainer>
+    </ElementContainer>
   );
 }
 
@@ -86,6 +73,30 @@ Element.defaultProps = {
   borderBottom: true,
   borderLeft: true
 };
+
+function ElementContainer(props) {
+  return (
+    <View
+      name={props.name}
+      style={[
+        {
+          position: props.absolute ? 'absolute' : 'relative',
+          padding: 0,
+          width: props.width,
+          height: props.height
+        },
+        props.absolute && {
+          top: props.top,
+          right: props.right,
+          bottom: props.bottom,
+          left: props.left
+        }
+      ]}
+      >
+      {props.children}
+    </View>
+  );
+}
 
 const StyledElementCorner = styled.View`
   background-color: #fff;

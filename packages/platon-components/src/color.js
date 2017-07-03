@@ -2,24 +2,24 @@ import React from 'react';
 import {View} from 'react-primitives';
 import {Tile} from './tile';
 
-export const ColorTile = props => (
+export const Color = props => (
   <Tile
-    name={`Color Tile "${props.name}"`}
+    name={`Color "${props.name}"`}
     headline={props.name}
-    subline={props.hex}
+    subline={props.description}
     size={props.size}
     margin={props.margin}
     >
-    <Color
+    <ColorSwatch
       hex={props.hex}
       size={props.size}
       />
   </Tile>
 );
 
-ColorTile.displayName = 'ColorTile';
+Color.displayName = 'Color';
 
-function Color(props) {
+function ColorSwatch(props) {
   return (
     <View
       style={{

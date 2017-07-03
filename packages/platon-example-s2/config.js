@@ -1,39 +1,41 @@
 export default {
-  colorTiles: {
+  colors: {
     name: 'S2 Colors',
-    colors: [
+    tokens: [
       {
         name: 'S2 BLUE',
-        hex: '#4502DA'
+        description: 'Primary color',
+        value: '#4502DA'
       },
       {
         name: 'S2 RED',
-        hex: '#FF0354'
+        value: '#FF0354'
       },
       {
         name: 'S2 GREEN',
-        hex: '#03FFB7'
+        value: '#03FFB7'
       },
       {
         name: 'S2 BLACK',
-        hex: '#1E212A'
+        value: '#1E212A'
       },
       {
         name: 'S2 GREY',
-        hex: '#E8ECEF'
+        value: '#E8ECEF'
       },
       {
         name: 'S2 WHITE',
-        hex: '#ffffff'
+        value: '#ffffff'
       }
     ]
   },
-  distanceTiles: {
-    name: 'S2 Distances',
-    distances: [
+  sizes: {
+    name: 'S2 Sizes',
+    tokens: [
       {
         name: '320',
-        values: [
+        description: 'Size variables in Viewports <= 320',
+        value: [
           {
             name: 'XXS',
             value: 3
@@ -70,289 +72,337 @@ export default {
       }
     ]
   },
-  fontTiles: {
+  fonts: {
     name: 'S2 Fonts',
-    fonts: [
+    tokens: [
       {
         name: 'Maison',
-        weight: 'Regular',
-        family: 'Maison-Regular'
-      },
-      {
-        name: 'Maison',
-        weight: 'Bold',
-        family: 'Maison-Bold'
+        description: 'Some Font',
+        value: {
+          weight: 'Regular',
+          family: 'Maison-Regular'
+        }
       },
       {
         name: 'Maison',
-        weight: 'Light',
-        family: 'Maison-Light'
+        value: {
+          weight: 'Bold',
+          family: 'Maison-Bold'
+        }
       },
       {
         name: 'Maison',
-        weight: 'Italic',
-        family: 'Maison-Italic'
+        value: {
+          weight: 'Light',
+          family: 'Maison-Light'
+        }
+      },
+      {
+        name: 'Maison',
+        value: {
+          weight: 'Italic',
+          family: 'Maison-Italic'
+        }
       },
       {
         name: 'Maison Mono',
-        weight: 'Regular',
-        family: 'MaisonMono-Regular',
-        fontSize: 25
+        value: {
+          weight: 'Regular',
+          family: 'MaisonMono-Regular',
+          fontSize: 25
+        }
       },
       {
         name: 'Maison Mono',
-        weight: 'Bold',
-        family: 'MaisonMono-Bold',
-        fontSize: 25
+        value: {
+          weight: 'Bold',
+          family: 'MaisonMono-Bold',
+          fontSize: 25
+        }
       },
       {
         name: 'Maison Mono',
-        weight: 'Light',
-        family: 'MaisonMono-Light',
-        fontSize: 25
+        value: {
+          weight: 'Light',
+          family: 'MaisonMono-Light',
+          fontSize: 25
+        }
       },
       {
         name: 'Maison Mono',
-        weight: 'Italic',
-        family: 'MaisonMono-Italic',
-        fontSize: 25
+        value: {
+          weight: 'Italic',
+          family: 'MaisonMono-Italic',
+          fontSize: 25
+        }
       },
       {
         name: 'Noe',
-        weight: 'Regular',
-        family: 'NoeText-Regular'
+        value: {
+          weight: 'Regular',
+          family: 'NoeText-Regular'
+        }
       }
     ]
   },
-  spaceTiles: {
+  spaces: {
     name: 'S2 Spaces',
-    spaces: [
+    tokens: [
       {
-        name: 'Space name',
-        description: 'Outside M',
-        direction: 'outside',
-        top: {
-          name: 'M',
-          value: 18
-        },
-        right: {
-          name: 'M',
-          value: 18
-        },
-        bottom: {
-          name: 'M',
-          value: 18
-        },
-        left: {
-          name: 'M',
-          value: 18
+        name: 'All Margin M',
+        description: 'Primary outer spacing',
+        value: {
+          direction: 'outside',
+          top: {
+            name: 'M',
+            value: 18
+          },
+          right: {
+            name: 'M',
+            value: 18
+          },
+          bottom: {
+            name: 'M',
+            value: 18
+          },
+          left: {
+            name: 'M',
+            value: 18
+          }
         }
       },
       {
-        name: 'Space name',
-        description: 'Inside M',
-        direction: 'inside',
-        top: {
-          name: 'M',
-          value: 18
-        },
-        right: {
-          name: 'M',
-          value: 18
-        },
-        bottom: {
-          name: 'M',
-          value: 18
-        },
-        left: {
-          name: 'M',
-          value: 18
+        name: 'All Padding M',
+        value: {
+          direction: 'inside',
+          top: {
+            name: 'M',
+            value: 18
+          },
+          right: {
+            name: 'M',
+            value: 18
+          },
+          bottom: {
+            name: 'M',
+            value: 18
+          },
+          left: {
+            name: 'M',
+            value: 18
+          }
         }
       },
       {
-        name: 'Space name',
-        description: 'Inside M',
-        direction: 'inside',
-        right: {
-          name: 'M',
-          value: 18
-        },
-        left: {
-          name: 'M',
-          value: 18
+        name: 'Horizontal Padding M',
+        value: {
+          direction: 'inside',
+          right: {
+            name: 'M',
+            value: 18
+          },
+          left: {
+            name: 'M',
+            value: 18
+          }
         }
       },
       {
-        name: 'Space name',
-        description: 'Outside M',
-        direction: 'outside',
-        right: {
-          name: 'M',
-          value: 18
-        },
-        left: {
-          name: 'M',
-          value: 18
+        name: 'Horizontal Margin M',
+        value: {
+          direction: 'outside',
+          right: {
+            name: 'M',
+            value: 18
+          },
+          left: {
+            name: 'M',
+            value: 18
+          }
         }
       }
     ]
   },
-  textTiles: {
+  texts: {
     name: 'S2 Text Styles',
-    texts: [
+    tokens: [
       {
         name: 'Headline 1',
-        fontFamily: 'Maison-Bold',
-        fontSize: 90,
-        lineHeight: 90,
-        textAlign: 'center'
+        description: 'Text style for primary headlines on any page',
+        value: {
+          fontFamily: 'Maison-Bold',
+          fontSize: 90,
+          lineHeight: 90,
+          textAlign: 'center'
+        }
       },
       {
         name: 'Headline 2',
-        fontFamily: 'Maison-Bold',
-        fontSize: 48,
-        lineHeight: 68,
-        letterSpacing: 1
+        value: {
+          fontFamily: 'Maison-Bold',
+          fontSize: 48,
+          lineHeight: 68,
+          letterSpacing: 1
+        }
       },
       {
         name: 'Headline 2 serif',
-        fontFamily: 'NoeText-Regular',
-        fontSize: 32,
-        lineHeight: 40,
-        textAlign: 'left'
+        value: {
+          fontFamily: 'NoeText-Regular',
+          fontSize: 32,
+          lineHeight: 40,
+          textAlign: 'left'
+        }
       }
     ]
   },
-  vectorTiles: {
+  vectors: {
     name: 'S2 Vectors',
-    vectors: [
+    tokens: [
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Top M',
-        vectorValue: 'Top M',
-        vectorOrigin: 'top',
-        vectorDirection: 'outside'
+        name: 'Top M',
+        description: 'May have a description',
+        value: {
+          length: 50,
+          lengthName: 'M',
+          origin: 'top',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Right M',
-        vectorValue: 'Right M',
-        vectorOrigin: 'right',
-        vectorDirection: 'outside'
+        name: 'Right M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'right',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Bottom M',
-        vectorValue: 'Bottom M',
-        vectorOrigin: 'bottom',
-        vectorDirection: 'outside'
+        name: 'Bottom M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'bottom',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Left M',
-        vectorValue: 'Left M',
-        vectorOrigin: 'left',
-        vectorDirection: 'outside'
+        name: 'Left M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'left',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Right L',
-        vectorValue: 'Right L',
-        vectorOrigin: 'right',
-        vectorDirection: 'outside'
+        name: 'Right L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'right',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Left L',
-        vectorValue: 'Left L',
-        vectorOrigin: 'left',
-        vectorDirection: 'outside'
+        name: 'Left L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'left',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Top L',
-        vectorValue: 'Top L',
-        vectorOrigin: 'top',
-        vectorDirection: 'outside'
+        name: 'Top L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'top',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Bottom L',
-        vectorValue: 'Bottom L',
-        vectorOrigin: 'bottom',
-        vectorDirection: 'outside'
+        name: 'Bottom L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'bottom',
+          direction: 'outside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Top M',
-        vectorValue: 'Top M',
-        vectorOrigin: 'top',
-        vectorDirection: 'inside'
+        name: 'Top M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'top',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Right M',
-        vectorValue: 'Right M',
-        vectorOrigin: 'right',
-        vectorDirection: 'inside'
+        name: 'Right M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'right',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Bottom M',
-        vectorValue: 'Bottom M',
-        vectorOrigin: 'bottom',
-        vectorDirection: 'inside'
+        name: 'Bottom M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'bottom',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'M',
-        distanceValue: 50,
-        vectorName: 'Left M',
-        vectorValue: 'Left M',
-        vectorOrigin: 'left',
-        vectorDirection: 'inside'
+        name: 'Left M',
+        value: {
+          lengthName: 'M',
+          length: 50,
+          origin: 'left',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Top L',
-        vectorValue: 'Top L',
-        vectorOrigin: 'top',
-        vectorDirection: 'inside'
+        name: 'Top L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'top',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Bottom L',
-        vectorValue: 'Bottom L',
-        vectorOrigin: 'bottom',
-        vectorDirection: 'inside'
+        name: 'Bottom L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'bottom',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Right L',
-        vectorValue: 'Right L',
-        vectorOrigin: 'right',
-        vectorDirection: 'inside'
+        name: 'Right L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'right',
+          direction: 'inside'
+        }
       },
       {
-        distanceName: 'L',
-        distanceValue: 300,
-        vectorName: 'Left L',
-        vectorValue: 'Left L',
-        vectorOrigin: 'left',
-        vectorDirection: 'inside'
+        name: 'Left L',
+        value: {
+          lengthName: 'L',
+          length: 300,
+          origin: 'left',
+          direction: 'inside'
+        }
       }
     ]
   }
