@@ -194,7 +194,15 @@ If everything works a new, empty Sketch document opens and your terminal prints 
     }
   };
   ```
-
-?> Sketch does not automatically zoom to new Artboards. Use `⌘ + 1` to see all Artboards on the page.
+**Tipp:** Sketch don't automaticly zoom to the new Artboard. Use `⌘ + 1` to see all Artboard in the canvas.
 
 ![Rendered Color Tile](./_media/04.png)
+
+### key value pairs
+In the config.js we define everything with `key: value` pairs. The `value` is mutable and can be changed by you.
+Even later in the project if you change your mind over a specific values.
+The `key` is static because we referencing it in the REACT COMPONET.
+
+<hr>
+
+ [Continue with the Basic guide](./guides-basic#guide-basic)
