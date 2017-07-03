@@ -1,15 +1,48 @@
 export default {
-  texts: {
-    name: 'Text Styles',
+  colors: {
+    name: 'colors',
     tokens: [
       {
-        name: 'huge', // Defines the name of the Text Style
+        name: 'blue',
+        value: '#0406DB'
+      },
+      {
+        name: 'red',
+        value: '#bc0021'
+      }
+    ]
+  },
+  fonts: {
+    name: 'fonts', // Sets the name of the artboard
+    tokens: [
+      {
+        name: 'Helvetica Neue', // Define the name of this the font
         value: {
-          fontFamily: 'HelveticaNeue-Bold', // Enter PostScript-Name
-          fontSize: 90, // CSS styling
-          lineHeight: 90, // CSS styling
-          textAlign: 'center' // CSS styling
+          weight: 'Bold', // Define the weight showing on the tile
+          family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
         }
+      }
+    ]
+  },
+  sizes: {
+    name: 'sizes', // Sets the name of the artboard
+    tokens: [
+      {
+        name: 'mobile', // Define the name of this the tile
+        value: [
+          {
+            name: 'XXS', // Define the name of the size
+            value: 3 // Define the value of the size
+          },
+          {
+            name: 'XS', // Define the name of the size
+            value: 6 // Define the value of the size
+          },
+          {
+            name: 'S', // Define the name of the size
+            value: 12 // Define the value of the size
+          }
+        ]
       }
     ]
   }
