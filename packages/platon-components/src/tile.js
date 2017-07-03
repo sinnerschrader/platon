@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-primitives';
+import redent from 'redent';
 
 const tileStyles = {
   position: 'relative',
@@ -29,16 +30,17 @@ const headlineStyles = {
 
 const sublineStyles = {
   fontSize: 14,
-  lineHeight: 20
+  lineHeight: 15
 };
 
 export function Tile(props) {
   const height = typeof props.height === 'number' ? props.height : props.size;
   const width = typeof props.width === 'number' ? props.width : props.size;
+  const description = redent(props.subline || '').split('\n');
 
   const descriptionHeight = [
     props.headline ? 30 : 0,
-    props.subline ? 20 : 0
+    description.length * 20
   ].reduce((m, i) => m + i, 0);
 
   const stageHeight = height - descriptionHeight;
@@ -74,9 +76,7 @@ export function Tile(props) {
         <Text style={headlineStyles}>
           {props.headline}
         </Text>
-        <Text style={sublineStyles}>
-          {props.subline}
-        </Text>
+        {description.map((d, i) => <Text key={String(i)} style={sublineStyles}>{d}</Text>)}
       </View>
     </View>
   );
