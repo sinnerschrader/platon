@@ -4,16 +4,20 @@
 
 ## Create Text Styles
 
-Text Styles is the first reference of the in [fonts](./guides-getting-started.md#add-the-next-artboard-with-fonts) defined values.
+?> Text Style represent the `CSS styling` of a font **not** the classification
+ like `H1`, `H2`, `H3` or `p`. <br>
+Therefore you can use the same styling for different usecases like Buttons, Links and Copytext.
 
-* Add the following command lines to the config.js the same way as `colors`, `fonts` and `sizes`:
+Text Styles is the first reference of the in [fonts](./guides-getting-started.md#_3.-Add-the-next-artboard-with-fonts) defined values.
+
+* Add the following command lines to the config.js the same way as *colors*, *fonts* and *sizes*:
 
   ```js
   textTiles: {
     name: 'Text Styles',
     texts: [
       {
-        name: 'standard', // Defines the name of the Text Style
+        name: 'huge', // Defines the name of the Text Style
         fontFamily: 'HelveticaNeue-Bold', // Enter PostScript-Name
         fontSize: 90, // CSS styling
         lineHeight: 90, // CSS styling
@@ -25,8 +29,15 @@ Text Styles is the first reference of the in [fonts](./guides-getting-started.md
 
   ![Rendered Color Tile](./_media/05.png)
 
-?> Text Style should only represent the styling of the fonts not the classification how it will be implemented.
-Here you don't define a H1 you just prepare the styling what you can use for it.
-Therefore you can use the same styling for different classifications.
+?> Difficult at this point is the naming of the Text Styles. We use the approche
+of discriping adjectives: **gigantic**, **huge**, **tall**, **average**, **tiny**, **mirco**.
 
-?> Difficult at this point is the naming of the Text Styles: we use the method:
+## Make your styling smarter
+
+In the Text Style CSS styling you maybe noticed that we set values we already
+defined in `fonts`, `colors` and `sizes`. So lets include the references in our
+styling like this:
+
+```js
+ Insert example Code
+```

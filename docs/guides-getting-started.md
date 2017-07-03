@@ -6,7 +6,13 @@ This guide makes you familiar with `platon` and helps you to understand the basi
 
 After completion of this guide you should end up with a directory comparable to the [platon-example-getting-started](https://git.io/vQBfi) project.
 
-## Setup
+[1. Setup](guides-getting-started.md#_1-Setup) <br>
+[2. Create your first Artboard](guides-getting-started.md#_2-Create-your-first-Artboard) <br>
+[2.1. Add more colors](guides-getting-started.md#_21-Add-more-colors) <br>
+[3. Add the next Artboard with fonts](guides-getting-started.md#_3-Add-the-next-Artboard-with-fonts) <br>
+[4. Define the basic sizes](guides-getting-started.md#_4-define-the-basic-sizes)
+
+## 1. Setup
 
 ```sh
 # Enter in a terminal session
@@ -31,10 +37,10 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 🔩  Built index.js in 3276ms
 ```
 
-## Create your first Artboard
+## 2. Create your first Artboard
 
 * Open `config.js` in Atom
-* Define your first "colors" Artboard like this:
+* Define your first `colors` Artboard like this:
 
   ```js
   export default {
@@ -54,7 +60,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 
   ![Rendered Color Tile](./_media/01.png)
 
-## Add more colors
+## 2.1. Add more colors
 
 * platon recognizes objects with the `.name` and `.hex` keys as colors, e.g.:
 
@@ -93,9 +99,9 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 * All tokens in a platon design system have a `name`, e.g. "red" and a `value`, e.g. "#ff0000"
 * All predefined Artbaord types take an array of tokens. This means they can display more than one token.
 
-## Add the next Artboard with fonts
+## 3. Add the next Artboard with fonts
 
-* Define your second "fonts" Artboard like this:
+* Define your second `fonts` Artboard like this:
 
   ```js
   export default {
@@ -131,12 +137,12 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 
 * You can add more fonts the same way as you added more colors.
 
-## Define the basic sizes
+## 4. Define the basic sizes
 
- * Define your third "sizes" Artboard like this:
+ * Define your third `sizes` Artboard like this:
 
  ?> In our example you can create sets of clustered sizes.
- The first set in this example is called `mobile`. 
+ The first set in this example is called `mobile`.
 
   ```js
   export default {
