@@ -43,6 +43,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 * Define your first `colors` Artboard like this:
 
   ```js
+  // in config.js
   export default {
     colors: {
       name: 'Colors',
@@ -78,6 +79,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 * The following examples has two colors with the names `blue` and `red`:
 
   ```js
+  // in config.js
   export default {
     colors: {
       name: 'colors', // Sets the name of the Artboard
@@ -104,6 +106,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 ## 3. Add font tokens
 
   ```js
+  // in config.js
   export default {
     colors: {
       name: 'colors',
@@ -140,6 +143,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 ## 4. Define basic sizes
 
   ```js
+  // in config.js
   export default {
     colors: {
       name: 'colors',
@@ -191,6 +195,6 @@ If everything works a new, empty Sketch document opens and your terminal prints 
   };
   ```
 
-?> Sketch does nott automaticly zoom to new Artboards. Use `⌘ + 1` to see all Artboards on the page.
+?> Sketch does not automatically zoom to new Artboards. Use `⌘ + 1` to see all Artboards on the page.
 
 ![Rendered Color Tile](./_media/04.png)

@@ -1,18 +1,15 @@
 # Guide: Basic
 
-:warning: Make sure you finished the guide [getting startet guide](./guides-getting-started.md)
+:warning: Make sure you finished the guide [getting started guide](./guides-getting-started.md)
 
-## Create Text Styles
+## 1. Create Text Styles
 
-?> Text Style represent the `CSS styling` of a font **not** the classification
- like `H1`, `H2`, `H3` or `p`. <br>
-Therefore you can use the same styling for different usecases like Buttons, Links and Copytext.
+?> Text Styles represent bundles of text-related styling such as `font-family`, `line-height` etc. They are on a different level of abstraction than both components (`headline`, `paragraph`) and fonts.
 
-Text Styles is the first reference of the in [fonts](./guides-getting-started.md#_3.-Add-the-next-artboard-with-fonts) defined values.
-
-* Add the following command lines to the config.js the same way as *colors*, *fonts* and *sizes*:
+![Font Hierarchy](./_media/font-hierarchy.svg)
 
   ```js
+  // in config.js
   export default {
     texts: {
       name: 'Text Styles',
@@ -33,12 +30,27 @@ Text Styles is the first reference of the in [fonts](./guides-getting-started.md
 
   ![Rendered Color Tile](./_media/05.png)
 
-## Make your styling smarter
+## 2. Make your tokens smarter
 
-In the Text Style CSS styling you maybe noticed that we set values we already
+If you followed along the [Getting started]() guide you may have noticed  the Text Style CSS styling you maybe noticed that we set values we already
 defined in `fonts`, `colors` and `sizes`. So lets include the references in our
 styling like this:
 
 ```js
- Insert example Code
+export default {
+  texts: {
+    name: 'Text Styles',
+    tokens: [
+      {
+        name: 'huge', // Defines the name of the Text Style
+        value: {
+          fontFamily: 'HelveticaNeue-Bold', // Enter PostScript-Name
+          fontSize: 90, // CSS styling
+          lineHeight: 90, // CSS styling
+          textAlign: 'center' // CSS styling
+        }
+      }
+    ]
+  }
+};
 ```
