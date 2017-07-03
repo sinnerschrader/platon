@@ -1,23 +1,18 @@
+const HNB = {
+  name: 'HNB',
+  value: 'HelveticaNeue-Bold'
+};
+
 export default {
-  colors: {
-    name: 'Colors',
-    tokens: [
-      {
-        name: 'Red',
-        description: '#bc0021',
-        value: '#bc0021'
-      }
-    ]
-  },
   fonts: {
     name: 'Fonts',
     tokens: [
       {
-        name: 'HNB',
-        value: {
-          weight: 'Bold',
-          family: 'HelveticaNeue-Bold'
-        }
+        ...HNB,
+        description: `
+          Helvetica Neue
+          Bold
+        `
       }
     ]
   },
@@ -27,46 +22,9 @@ export default {
       {
         name: 'huge',
         value: {
-          color: {
-            value: '#bc0021',
-            name: 'Red'
-          },
-          fontFamily: {
-            value: 'HelveticaNeue-Bold',
-            name: 'HNB'
-          },
-          fontSize: {
-            value: 90,
-            name: 'Text XXL'
-          },
-          lineHeight: {
-            value: 90,
-            name: 'Text XLL'
-          },
-          textAlign: 'center'
+          fontFamily: HNB,
+          fontSize: 60
         }
-      }
-    ]
-  },
-  sizes: {
-    name: 'Sizes',
-    tokens: [
-      {
-        name: 'Text Sizes',
-        value: [
-          {
-            name: 'Text L',
-            value: 30
-          },
-          {
-            name: 'Text XL',
-            value: 60
-          },
-          {
-            name: 'Text XXL',
-            value: 90
-          }
-        ]
       }
     ]
   }

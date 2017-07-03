@@ -77,71 +77,46 @@ export default {
     tokens: [
       {
         name: 'Maison',
-        description: 'Some Font',
-        value: {
-          weight: 'Regular',
-          family: 'Maison-Regular'
-        }
+        description: 'Regular',
+        value: 'Maison-Regular'
       },
       {
         name: 'Maison',
-        value: {
-          weight: 'Bold',
-          family: 'Maison-Bold'
-        }
+        description: 'Bold',
+        value: 'Maison-Bold'
       },
       {
         name: 'Maison',
-        value: {
-          weight: 'Light',
-          family: 'Maison-Light'
-        }
+        description: 'Light',
+        value: 'Maison-Light'
       },
       {
         name: 'Maison',
-        value: {
-          weight: 'Italic',
-          family: 'Maison-Italic'
-        }
+        description: 'Italic',
+        value: 'Maison-Italic'
       },
       {
         name: 'Maison Mono',
-        value: {
-          weight: 'Regular',
-          family: 'MaisonMono-Regular',
-          fontSize: 25
-        }
+        value: 'MaisonMono-Regular'
       },
       {
         name: 'Maison Mono',
-        value: {
-          weight: 'Bold',
-          family: 'MaisonMono-Bold',
-          fontSize: 25
-        }
+        description: 'Bold',
+        value: 'MaisonMono-Bold'
       },
       {
         name: 'Maison Mono',
-        value: {
-          weight: 'Light',
-          family: 'MaisonMono-Light',
-          fontSize: 25
-        }
+        description: 'Light',
+        value: 'MaisonMono-Light'
       },
       {
         name: 'Maison Mono',
-        value: {
-          weight: 'Italic',
-          family: 'MaisonMono-Italic',
-          fontSize: 25
-        }
+        description: 'Italic',
+        value: 'MaisonMono-Italic'
       },
       {
         name: 'Noe',
-        value: {
-          weight: 'Regular',
-          family: 'NoeText-Regular'
-        }
+        value: 'NoeText-Regular'
       }
     ]
   },

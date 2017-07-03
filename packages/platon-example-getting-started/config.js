@@ -13,14 +13,12 @@ export default {
     ]
   },
   fonts: {
-    name: 'fonts', // Sets the name of the artboard
+    name: 'fonts',
     tokens: [
       {
-        name: 'Helvetica Neue', // Define the name of this the font
-        value: {
-          weight: 'Bold', // Define the weight showing on the tile
-          family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
-        }
+        name: 'Helvetica Neue',
+        description: 'bold',
+        value: 'HelveticaNeue-Bold'
       }
     ]
   },

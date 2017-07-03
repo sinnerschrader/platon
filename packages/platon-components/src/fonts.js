@@ -6,19 +6,15 @@ export const Fonts = props => {
   const {tokens = []} = props;
   return (
     <Tiles name={Fonts.displayName}>
-      {tokens.map(font => {
-        const {value = {}} = font;
+      {tokens.map(token => {
         return (
           <Font
-            key={JSON.stringify(font)}
-            family={value.family}
-            name={font.name}
-            description={font.description}
+            key={JSON.stringify(token)}
+            family={token.value}
+            name={token.name}
+            description={token.description}
             size={props.size}
             margin={props.gutter}
-            fontSize={value.fontSize}
-            lineHeight={value.lineHeight}
-            weight={value.weight}
             />
         );
       }
