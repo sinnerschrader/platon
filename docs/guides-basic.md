@@ -13,24 +13,25 @@ Text Styles is the first reference of the in [fonts](./guides-getting-started.md
 * Add the following command lines to the config.js the same way as *colors*, *fonts* and *sizes*:
 
   ```js
-  textTiles: {
-    name: 'Text Styles',
-    texts: [
-      {
-        name: 'huge', // Defines the name of the Text Style
-        fontFamily: 'HelveticaNeue-Bold', // Enter PostScript-Name
-        fontSize: 90, // CSS styling
-        lineHeight: 90, // CSS styling
-        textAlign: 'center' // CSS styling
-      }
-    ]
-  }
+  export default {
+    texts: {
+      name: 'Text Styles',
+      tokens: [
+        {
+          name: 'huge', // Defines the name of the Text Style
+          value: {
+            fontFamily: 'HelveticaNeue-Bold', // Enter PostScript-Name
+            fontSize: 90, // CSS styling
+            lineHeight: 90, // CSS styling
+            textAlign: 'center' // CSS styling
+          }
+        }
+      ]
+    }
+  };
   ```
 
   ![Rendered Color Tile](./_media/05.png)
-
-?> Difficult at this point is the naming of the Text Styles. We use the approche
-of discriping adjectives: **gigantic**, **huge**, **tall**, **average**, **tiny**, **mirco**.
 
 ## Make your styling smarter
 

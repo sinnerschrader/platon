@@ -44,49 +44,51 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 
   ```js
   export default {
-    colorTiles: {
-      name: 'colors',
-      colors: [
+    colors: {
+      name: 'Colors',
+      tokens: [
         {
           name: 'blue',
-          hex: '#0406DB'
+          description: 'My first color',
+          value: '#0406DB'
         }
       ]
     }
-  }
+  };
   ```
 
 * Saving `config.js` triggers the file watcher and causes a new build, producing an Artboard like this
 
   ![Rendered Color Tile](./_media/01.png)
 
-## 2.1. Add more colors
+## 2.1. More colors
 
-* platon recognizes objects with the `.name` and `.hex` keys as colors, e.g.:
+* platon recognizes objects with the `.name`, `.description` and `.value` keys as tokens. e.g.:
 
   ```js
   // Next color you'll add to .colorTiles.colors
   {
     name: 'red', // Define the name of this color
-    hex: '#bc0021' // Define the actual color value used for the color tile
+    description: 'This is the red for errors', // Optionally define a description for this color
+    value: '#bc0021' // Define the actual color value used for the color tile
   }
   ```
 
-* In our example those colors live on the `.colors` key of `.colorTiles`. This means you can add new colors by appending them to the colors array.
+* In our example those `.tokens` live in `.colors` of `config.js`. This causes platon to inpret them as colors - you can add more color tokens by appending them to the `.colors.tokens` array.
 * The following examples has two colors with the names `blue` and `red`:
 
   ```js
   export default {
-    colorTiles: {
-      name: 'colors', // Sets the name of the artboard
-      colors: [
+    colors: {
+      name: 'colors', // Sets the name of the Artboard
+      tokens: [
         {
           name: 'blue', // Define the name of this color
-          hex: '#0406DB' // Define the actual color value used for the color tile
+          value: '#0406DB' // Define the actual color value used for the color tile
         },
         {
           name: 'red', // Define the name of this color
-          hex: '#bc0021' // Define the actual color value used for the color tile
+          value: '#bc0021' // Define the actual color value used for the color tile
         }
       ]
     }
@@ -97,84 +99,79 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 
 * This demonstrates two important principles of `platon`
 * All tokens in a platon design system have a `name`, e.g. "red" and a `value`, e.g. "#ff0000"
-* All predefined Artbaord types take an array of tokens. This means they can display more than one token.
+* All predefined Artboard types take an array of tokens. This means they can display more than one token.
 
-## 3. Add the next Artboard with fonts
-
-* Define your second `fonts` Artboard like this:
+## 3. Add font tokens
 
   ```js
   export default {
-    colorTiles: {
+    colors: {
       name: 'colors',
-      colors: [
+      tokens: [
         {
           name: 'blue',
-          hex: '#0406DB'
+          value: '#0406DB'
         },
         {
           name: 'red',
-          hex: '#bc0021'
+          value: '#bc0021'
         }
       ]
     },
-    fontTiles: {
+    fonts: {
       name: 'fonts', // Sets the name of the artboard
-      fonts: [
+      tokens: [
         {
           name: 'Helvetica Neue', // Define the name of this the font
-          weight: 'Bold', // Define the weight showing on the tile
-          family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
+          value: {
+            weight: 'Bold', // Define the weight showing on the tile
+            family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
+          }
         }
       ]
     }
-  }
+  };
   ```
 
 * To display the right font use the `PostScript-Name` for the `family` key.
 
   ![Rendered Color Tile](./_media/03.png)
 
-* You can add more fonts the same way as you added more colors.
-
-## 4. Define the basic sizes
-
- * Define your third `sizes` Artboard like this:
-
- ?> In our example you can create sets of clustered sizes.
- The first set in this example is called `mobile`.
+## 4. Define basic sizes
 
   ```js
   export default {
-    colorTiles: {
+    colors: {
       name: 'colors',
-      colors: [
+      tokens: [
         {
           name: 'blue',
-          hex: '#0406DB'
+          value: '#0406DB'
         },
         {
           name: 'red',
-          hex: '#bc0021'
+          value: '#bc0021'
         }
       ]
     },
-    fontTiles: {
-      name: 'fonts',
-      fonts: [
+    fonts: {
+      name: 'fonts', // Sets the name of the artboard
+      tokens: [
         {
-          name: 'Helvetica Neue',
-          weight: 'Bold',
-          family: 'HelveticaNeue-Bold'
+          name: 'Helvetica Neue', // Define the name of this the font
+          value: {
+            weight: 'Bold', // Define the weight showing on the tile
+            family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
+          }
         }
       ]
     },
-    distanceTiles: {
+    sizes: {
       name: 'sizes', // Sets the name of the artboard
-      distances: [
+      tokens: [
         {
           name: 'mobile', // Define the name of this the tile
-          values: [
+          value: [
             {
               name: 'XXS', // Define the name of the size
               value: 3 // Define the value of the size
@@ -191,8 +188,9 @@ If everything works a new, empty Sketch document opens and your terminal prints 
         }
       ]
     }
-  }
+  };
   ```
-?> Sketch don't automaticly zoom to the new Artboard. Use `⌘ + 1` to see all artboard in the canvas.
+
+?> Sketch does nott automaticly zoom to new Artboards. Use `⌘ + 1` to see all Artboards on the page.
 
 ![Rendered Color Tile](./_media/04.png)
