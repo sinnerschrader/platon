@@ -125,11 +125,9 @@ If everything works a new, empty Sketch document opens and your terminal prints 
       name: 'fonts', // Sets the name of the artboard
       tokens: [
         {
-          name: 'Helvetica Neue', // Define the name of this the font
-          value: {
-            weight: 'Bold', // Define the weight showing on the tile
-            family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
-          }
+          name: 'Helvetica Neue',
+          description: 'bold',
+          value: 'HelveticaNeue-Bold'
         }
       ]
     }
@@ -159,14 +157,12 @@ If everything works a new, empty Sketch document opens and your terminal prints 
       ]
     },
     fonts: {
-      name: 'fonts', // Sets the name of the artboard
+      name: 'fonts',
       tokens: [
         {
-          name: 'Helvetica Neue', // Define the name of this the font
-          value: {
-            weight: 'Bold', // Define the weight showing on the tile
-            family: 'HelveticaNeue-Bold' // Define the actual displayed font - use PostScript-Name.
-          }
+          name: 'Helvetica Neue',
+          description: 'bold',
+          value: 'HelveticaNeue-Bold'
         }
       ]
     },
@@ -194,7 +190,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
     }
   };
   ```
-**Tipp:** Sketch don't automaticly zoom to the new Artboard. Use `⌘ + 1` to see all Artboard in the canvas.
+**Tipp:** Sketch does not automatically zoom to the new Artboard. Use `⌘ + 1` to see all Artboards on the current page.
 
 ![Rendered Color Tile](./_media/04.png)
 
