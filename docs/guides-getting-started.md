@@ -86,15 +86,17 @@ If everything works a new, empty Sketch document opens and your terminal prints 
       tokens: [
         {
           name: 'blue', // Define the name of this color
+          description: 'My first color', // Optionally define a description for this color
           value: '#0406DB' // Define the actual color value used for the color tile
         },
         {
           name: 'red', // Define the name of this color
+          description: 'This is the red for errors', // Optionally define a description for this color
           value: '#bc0021' // Define the actual color value used for the color tile
         }
       ]
     }
-  }
+  };
   ```
 
   ![Rendered Color Tile](./_media/02.png)
@@ -113,10 +115,12 @@ If everything works a new, empty Sketch document opens and your terminal prints 
       tokens: [
         {
           name: 'blue',
+          description: 'My first color',
           value: '#0406DB'
         },
         {
           name: 'red',
+          description: 'This is the red for errors',
           value: '#bc0021'
         }
       ]
@@ -125,9 +129,9 @@ If everything works a new, empty Sketch document opens and your terminal prints 
       name: 'fonts', // Sets the name of the artboard
       tokens: [
         {
-          name: 'Helvetica Neue',
-          description: 'bold',
-          value: 'HelveticaNeue-Bold'
+          name: 'Helvetica Neue', // Define the name of this font
+          description: 'bold', // Optionally define a description for this font
+          value: 'HelveticaNeue-Bold' // Insert PostScript-Name to define the actual font used for the font tile
         }
       ]
     }
@@ -190,6 +194,9 @@ If everything works a new, empty Sketch document opens and your terminal prints 
     }
   };
   ```
+
+  ?> In this token we used for the key: **value** a `number` and not a `string`. The `number` will be interpreted as a pixel value like in CSS.
+
 **Tipp:** Sketch does not automatically zoom to the new Artboard. Use `⌘ + 1` to see all Artboards on the current page.
 
 ![Rendered Color Tile](./_media/04.png)

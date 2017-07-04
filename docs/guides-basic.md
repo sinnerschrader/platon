@@ -8,7 +8,7 @@ Text Styles represent bundles of text-related styling such as `font-family`, `li
 
 It may be useful to think of Text Styles as CSS classes specialized and constrained to text-specific properties.
 
-![Font Hierarchy](./_media/font-hierarchy.svg)
+![Font Hierarchy](./_media/fonts-text-hierarchy.png)
 
   ```js
   // in config.js
@@ -34,7 +34,7 @@ It may be useful to think of Text Styles as CSS classes specialized and constrai
 
 ## 2. Make your Text Styles a bit smarter
 
-If you followed along the [Getting started](./guides-getting-started.md) guide you may have noticed that the Text Style CSS styling you maybe noticed that the rendered Text Styles print information that is already contained in lower level tokens, such as `fonts`. In order to hide this information you can use **named values** like this:
+If you followed along the [Getting started](./guides-getting-started.md) guide you may have noticed that the Text Style CSS styling print information that is already contained in lower level tokens, such as `fonts`. In order to hide this information you can use **named values** like this:
 
 ```js
 export default {
@@ -44,9 +44,9 @@ export default {
       {
         name: 'huge',
         value: {
-          fontFamily: {
-            name: 'HNB',
-            value: 'HelveticaNeue-Bold'
+          fontFamily: { // 'named values' example
+            name: 'HNB', // Defines the name of the 'named value'
+            value: 'HelveticaNeue-Bold' // Define the actual value of the 'named value'
           }
         }
       }
@@ -63,7 +63,7 @@ export default {
     name: 'Fonts',
     tokens: [
       {
-        name: 'HNB',
+        name: 'HNB', // Consistant naming
         description: `
           Helvetica Neue
           Bold
@@ -79,7 +79,7 @@ export default {
         name: 'huge',
         value: {
           fontFamily: {
-            name: 'HNB',
+            name: 'HNB', // Consistant naming
             value: 'HelveticaNeue-Bold'
           },
           fontSize: 60
@@ -93,7 +93,7 @@ export default {
 As `config.js` contains JavaScript you can couple the tokens explicitly for greater consistency:
 
 ```js
-const HNB = {
+const HNB = { // Define a variable you want to use in more than one token
   name: 'HNB',
   value: 'HelveticaNeue-Bold'
 };
@@ -103,7 +103,8 @@ export default {
     name: 'Fonts',
     tokens: [
       {
-        ...HNB,
+        name: HNB.name, // refer to variable
+        value: HNB.value, // refer to variable
         description: `
           Helvetica Neue
           Bold
@@ -117,7 +118,7 @@ export default {
       {
         name: 'huge',
         value: {
-          fontFamily: HNB,
+          fontFamily: HNB, // refer to variable
           fontSize: 60
         }
       }
