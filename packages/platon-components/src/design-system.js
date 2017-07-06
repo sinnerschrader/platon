@@ -1,3 +1,4 @@
+import t from 'prop-types';
 import React from 'react';
 import {View} from 'react-primitives';
 import {Artboard} from './artboard';
@@ -125,6 +126,161 @@ export function DesignSystem(props) {
 }
 
 DesignSystem.displayName = 'DesignSystem';
+
+DesignSystem.defaultProps = {
+  colors: null,
+  fonts: null,
+  sizes: null,
+  vectors: null,
+  spaces: null,
+  texts: null
+};
+
+DesignSystem.propTypes = {
+  colors: t.shape({
+    name: t.string.isRequired,
+    tokens: t.arrayOf(t.shape({
+      name: t.string.isRequired,
+      description: t.string,
+      value: t.string.isRequired
+    })).isRequired
+  }),
+  fonts: t.shape({
+    name: t.string.isRequired,
+    tokens: t.arrayOf(t.shape({
+      name: t.string.isRequired,
+      description: t.string,
+      value: t.string.isRequired
+    })).isRequired
+  }),
+  sizes: t.shape({
+    name: t.string.isRequired,
+    tokens: t.arrayOf(t.shape({
+      name: t.string.isRequired,
+      description: t.string,
+      value: t.arrayOf(
+        t.shape({
+          name: t.string.isRequired,
+          value: t.number.isRequired
+        }).isRequired
+      ).isRequired
+    })).isRequired
+  }),
+  vectors: t.shape({
+    name: t.string.isRequired,
+    tokens: t.arrayOf(t.shape({
+      name: t.string.isRequired,
+      description: t.string,
+      value: t.shape({
+        origin: t.oneOf(['top', 'right', 'bottom', 'left']).isRequired,
+        direction: t.oneOf(['inside', 'outside']),
+        length: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          }).isRequired
+        ])
+      }).isRequired
+    })).isRequired
+  }),
+  spaces: t.shape({
+    name: t.string.isRequired,
+    tokens: t.arrayOf(t.shape({
+      name: t.string.isRequired,
+      description: t.string,
+      value: t.shape({
+        direction: t.oneOf(['inside', 'outside']),
+        top: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          }).isRequired
+        ]),
+        right: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          }).isRequired
+        ]),
+        bottom: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          }).isRequired
+        ]),
+        left: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          }).isRequired
+        ])
+      })
+    }))
+  }),
+  texts: t.shape({
+    name: t.string.isRequired,
+    tokens: t.arrayOf(t.shape({
+      name: t.string.isRequired,
+      description: t.string,
+      value: t.shape({
+        fontFamily: t.oneOfType([
+          t.string.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.string.isRequired
+          })
+        ]),
+        fontSize: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          })
+        ]),
+        lineHeight: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          })
+        ]),
+        color: t.oneOfType([
+          t.string.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.string.isRequired
+          })
+        ]),
+        textTransform: t.oneOfType([
+          t.oneOf(['uppercase', 'lowercase']).isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.oneOf(['uppercase', 'lowercase']).isRequired
+          })
+        ]),
+        textAlign: t.oneOfType([
+          t.oneOf(['left', 'right', 'center', 'justify']).isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.oneOf(['left', 'right', 'center', 'justify']).isRequired
+          })
+        ]),
+        letterSpacing: t.oneOfType([
+          t.number.isRequired,
+          t.shape({
+            name: t.string.isRequired,
+            value: t.number.isRequired
+          })
+        ])
+      })
+    })).isRequired
+  })
+};
 
 function getOffset(props, offsets) {
   const count = Object.keys(props).slice(0, offsets.length).filter(Boolean).length;

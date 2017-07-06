@@ -3,12 +3,16 @@
   "version": "1.0.4",
   "private": true,
   "main": "platon-example-s2.sketchplugin",
+  "repository": "https://github.com/sinnerschrader/platon",
+  "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
+  "license": "MIT",
   "manifest": "src/manifest.json",
   "scripts": {
     "start": "stmux -- [ \"npm run start:sketch\" .. \"npm run start:web\" ]",
     "prestart:sketch": "ensure-sketch-document",
     "start:sketch": "skpm build --watch --run",
-    "start:web": "webpack-dev-server --config webpack.web.js"
+    "start:web": "webpack-dev-server --config webpack.web.js",
+    "clean": "rimraf $npm_package_main"
   },
   "dependencies": {
     "platon-components": "^1.0.4",
@@ -25,6 +29,7 @@
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.4.0",
     "ensure-sketch-document": "^1.0.3",
+    "rimraf": "^2.6.1",
     "skpm": "^0.9.16",
     "stmux": "^1.4.11",
     "webpack": "^3.0.0",

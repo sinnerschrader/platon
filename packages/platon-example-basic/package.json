@@ -3,9 +3,14 @@
   "version": "1.0.4",
   "private": true,
   "main": "platon-example-basic.sketchplugin",
+  "repository": "https://github.com/sinnerschrader/platon",
+  "author": "SinnerSchrader AG <jobs@sinnerschrader.com>",
+  "license": "MIT",
   "manifest": "manifest.json",
   "scripts": {
+    "prestart": "ensure-sketch-document",
     "start": "skpm build --watch --run",
+    "clean": "rimraf $npm_package_main",
     "reset": "echo 'export default {};' > config.js"
   },
   "dependencies": {
@@ -17,6 +22,7 @@
   },
   "devDependencies": {
     "ensure-sketch-document": "^1.0.3",
+    "rimraf": "^2.6.1",
     "skpm": "^0.9.16"
   }
 }
