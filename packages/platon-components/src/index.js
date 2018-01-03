@@ -1,4 +1,4 @@
-export {Artboard} from './artboard';
+export {Artboard} from './artboard/artboard';
 export {Colors} from './colors';
 export {DesignSystem} from './design-system';
 export {Fonts} from './fonts';

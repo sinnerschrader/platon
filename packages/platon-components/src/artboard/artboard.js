@@ -55,5 +55,6 @@ SketchArtboard.defaultProps = {
   top: 0
 };
 
+export {BrowserArtboard, SketchArtboard};
 export const Artboard = global.document ? BrowserArtboard : SketchArtboard;
 Artboard.displayName = 'Artboard';
