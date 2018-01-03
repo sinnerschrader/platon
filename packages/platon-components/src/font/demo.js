@@ -11,7 +11,7 @@ The \`<Font/>\` displays a well-known \`font-family\` value and its meta data.
 ## Usage
 
 \`\`\`js
-  function ColorDemo() {
+  function FontDemo() {
     return (
       <Font
         name="white"
@@ -27,7 +27,7 @@ The \`<Font/>\` displays a well-known \`font-family\` value and its meta data.
 
 ## Notes
 
-* Use a container with \`flex-direction: row;\` to display multiple colors side by side
+* Use a container with \`flex-direction: row;\` to display multiple fonts side by side
 
 `;
 
