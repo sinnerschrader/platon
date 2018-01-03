@@ -31,7 +31,7 @@ function FontSwatch(props) {
         fontFamily: props.family
       }}
       >
-      „Sch&ouml;nheit bietet eine natürliche Überlegenheit.”
+      {props.children}
     </Text>
   );
 }
