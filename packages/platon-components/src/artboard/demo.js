@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components/primitives';
 import {BrowserArtboard} from './artboard';
 import {DemoContainer} from '../demo-container';
 
@@ -23,6 +24,17 @@ const DOCS = `
   \`\`\`
 `;
 
+const Example = styled.View`
+  box-sizing: border-box;
+  width: calc(100% - 20px);
+  height: 25px;
+  background: #eee;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  ${props => props.first ? 'margin-top: 10px;' : ''}
+`
+
 export default () => {
   return (
     <DemoContainer docs={DOCS}>
@@ -37,6 +49,9 @@ export default () => {
           borderStyle: 'solid'
         }}
         >
+        <Example first/>
+        <Example/>
+        <Example/>
       </BrowserArtboard>
     </DemoContainer>
   );
