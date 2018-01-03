@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-primitives';
 import styled from 'styled-components';
 import tag from 'tag-hoc';
 import {BrowserArtboard} from './artboard';
