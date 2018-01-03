@@ -1,5 +1,7 @@
 import React from 'react';
-import styled from 'styled-components/primitives';
+import {View} from 'react-primitives';
+import styled from 'styled-components';
+import tag from 'tag-hoc';
 import {BrowserArtboard} from './artboard';
 import {DemoContainer} from '../demo-container';
 
@@ -24,7 +26,7 @@ const DOCS = `
   \`\`\`
 `;
 
-const Example = styled.View`
+const Example = styled(tag(['first'])('div'))`
   box-sizing: border-box;
   width: calc(100% - 20px);
   height: 25px;
@@ -33,7 +35,7 @@ const Example = styled.View`
   margin-bottom: 10px;
   margin-right: 10px;
   ${props => props.first ? 'margin-top: 10px;' : ''}
-`
+`;
 
 export default () => {
   return (
