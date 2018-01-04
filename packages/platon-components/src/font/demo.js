@@ -14,12 +14,12 @@ The \`<Font/>\` displays a well-known \`font-family\` value and its meta data.
   function FontDemo() {
     return (
       <Font
-        name="white"
-        headline="White"
-        hex="#ffffff"
-        description="The lightest possible color"
+        description="Demonstrate a serif font"
+        family="Georgia"
+        headline="Georgia"
         margin={10}
-        size={150}
+        name="Georgia"
+        size={300}
         >
     );
   }
