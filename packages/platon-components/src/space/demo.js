@@ -17,16 +17,23 @@ screen sizes.
 ## Usage
 
 \`\`\`js
-  function SizeDemo() {
-    return (
-      <View>
-        <Size origin="top">A</Label>
-        <Size origin="top">B</Label>
-        <Size origin="top">C</Label>
-        <Size origin="top">D</Label>
-      </View>
-    );
-  }
+function SpaceDemo() {
+  return (
+    <View>
+      <Space
+        size={250}
+        origin="top"
+        name="Space A"
+        direction="Primary spacing between elements"
+        direction="outside"
+        bottom={{
+          name: 'Size A',
+          value: 15
+        }}
+        />
+    </View>
+  );
+}
 \`\`\`
 `;
 
