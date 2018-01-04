@@ -35,8 +35,7 @@ export function Text(props) {
           letterSpacing: getValue(props.letterSpacing)
         }}
         >
-        Die Philosophie bietet mir einen Hafen,
-        während ich andere mit den Stürmen kämpfen sehe.
+        {props.children}
       </T>
       <View style={[tableStyle, {width: size - 40}]}>
         <Pair

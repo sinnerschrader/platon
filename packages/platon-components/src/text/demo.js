@@ -25,7 +25,10 @@ export default function SpaceDemo() {
           fontSize={50}
           lineHeight={{name: 'A', value: 60}}
           color={{name: 'Black', value: '#000'}}
-          />
+          >
+            Die Philosophie bietet mir einen Hafen,
+            während ich andere mit den Stürmen kämpfen sehe.
+        </Text>
       </StyledRow>
     </DemoContainer>
   );
