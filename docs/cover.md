@@ -41,4 +41,11 @@
 </svg>
 
 <h1 class="platon-h1">platon</h1>
-<p>Design systems in clarity</p>
+<h2>Design systems in clarity</h2>
+
+<p class="platon-intro">
+It helps you to bootstrap a design system 
+and communicate about it with clarity, precision and beauty.
+</p>
+
+<a class="platon-button-primary" href="#?id=platon">Learn how</a> 
