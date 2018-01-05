@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components/primitives';
 import {View, Text} from 'react-primitives';
 import redent from 'redent';
 
@@ -46,7 +47,7 @@ export function Tile(props) {
   const stageHeight = height - descriptionHeight;
 
   return (
-    <View
+    <Container
       name={props.name}
       style={[
         tileStyles,
@@ -57,6 +58,15 @@ export function Tile(props) {
         }
       ]}
       >
+      <Description
+        name="Tile Description"
+        style={descriptionStyles}
+        >
+        <Text style={headlineStyles}>
+          {props.headline}
+        </Text>
+        {description.map((d, i) => <Text key={String(i)} style={sublineStyles}>{d}</Text>)}
+      </Description>
       <View
         name="Tile Stage"
         style={[
@@ -69,17 +79,19 @@ export function Tile(props) {
         >
         {props.children}
       </View>
-      <View
-        name="Tile Description"
-        style={descriptionStyles}
-        >
-        <Text style={headlineStyles}>
-          {props.headline}
-        </Text>
-        {description.map((d, i) => <Text key={String(i)} style={sublineStyles}>{d}</Text>)}
-      </View>
-    </View>
+    </Container>
   );
 }
 
 Tile.displayName = 'Tile';
+
+const Container = styled.View`
+  position: relative;
+`;
+
+const Description = styled.View`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
