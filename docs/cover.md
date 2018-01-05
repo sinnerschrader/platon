@@ -1,4 +1,4 @@
-<svg width="350" viewBox="0 0 150 121">
+<svg class="logo" width="350" viewBox="0 0 150 121">
     <defs>
         <style>
             .a {
@@ -39,3 +39,6 @@
     <path d="M150 103L95 22H55L0 103l50 10 25-51 25 51 50-10z" class="a c"/>
     <path d="M150 111L95 30H55L0 111l50 10 25-51 25 51 50-10z" class="a b"/>
 </svg>
+
+<h1 class="platon-h1">platon</h1>
+<p>Design systems in clarity</p>
