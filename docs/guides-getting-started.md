@@ -204,7 +204,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 ### key value pairs
 In the config.js we define everything with `key: value` pairs. The `value` is mutable and can be changed by you.
 Even later in the project if you change your mind over a specific values.
-The `key` is static because we referencing it in the REACT COMPONENT.
+The `key` is static because we are referencing it in the REACT COMPONENT.
 
 <hr>
 
