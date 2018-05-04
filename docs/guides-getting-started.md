@@ -197,7 +197,7 @@ If everything works a new, empty Sketch document opens and your terminal prints 
 
   ?> In this token we used for the key: **value** a `number` and not a `string`. The `number` will be interpreted as a pixel value like in CSS.
 
-**Tipp:** Sketch does not automatically zoom to the new Artboard. Use `⌘ + 1` to see all Artboards on the current page.
+**Hint:** Sketch does not automatically zoom to the new Artboard. Use `⌘ + 1` to see all Artboards on the current page.
 
 ![Rendered Color Tile](./_media/04.png)
 
